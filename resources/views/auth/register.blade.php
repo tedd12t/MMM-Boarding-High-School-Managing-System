@@ -2,7 +2,6 @@
 
 @section('content')
 <style>
-    /* --- THIS OVERRIDES THE GLOBAL SIDEBAR MARGIN --- */
     main {
         margin-left: 0 !important;
         width: 100% !important;
@@ -18,7 +17,6 @@
         display: flex !important;
         justify-content: center !important;
     }
-    /* 1. HIDE THE HEADER COMPLETELY */
     nav.navbar, .navbar {
         display: none !important;
     }
@@ -33,8 +31,6 @@
         align-items: center;
         justify-content: center;
     }
-
-    /* --- ANIMATED BACKGROUND --- */
     .bg-wrapper {
         position: fixed;
         top: 0; left: 0; width: 100%; height: 100%;
@@ -72,16 +68,12 @@
         from { transform: scale(1); }
         to { transform: scale(1.1); }
     }
-
-    /* --- CENTERED MEDIUM REGISTRATION CARD --- */
     .register-container {
-        width: 100vw !important;   /* Forces full screen width */
-        margin-left: 0 !important;  /* Removes the sidebar gap */
+        width: 100vw !important;  
+        margin-left: 0 !important; 
         display: flex;
-        justify-content: center;    /* Centers horizontally */
+        justify-content: center;  
         align-items: flex-start; 
-    
-        /* KEEP YOUR ORIGINAL TOP PADDING */
         padding-top: 10vh; 
         z-index: 10;
     }
@@ -103,8 +95,6 @@
         margin-bottom: 30px;
         letter-spacing: -1px;
     }
-
-    /* --- INPUT FIX (VISIBLE TEXT & DARK BACKGROUND) --- */
     .input-group-premium {
         position: relative;
         margin-bottom: 20px;
@@ -120,11 +110,11 @@
     }
 
     .form-control-premium {
-        background-color: #0f172a !important; /* Forces dark background */
+        background-color: #0f172a !important; 
         border: 1px solid rgba(255, 255, 255, 0.1) !important;
         border-radius: 10px !important;
         padding: 13px 15px 13px 52px !important;
-        color: #ffffff !important; /* Text is always white */
+        color: #ffffff !important; 
         font-size: 1rem;
         transition: 0.3s ease;
         width: 100%;
@@ -135,8 +125,6 @@
         box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2) !important;
         outline: none;
     }
-
-    /* CRITICAL: Prevents invisible typing on Saved Passwords/Autofill */
     input:-webkit-autofill,
     input:-webkit-autofill:hover, 
     input:-webkit-autofill:focus, 
@@ -155,8 +143,6 @@
         margin-bottom: 8px;
         display: block;
     }
-
-    /* --- BUTTON & LINKS --- */
     .btn-register-submit {
         background: #2563eb !important;
         color: white !important;
@@ -199,13 +185,11 @@
     }
 </style>
 
-<!-- Background Wrapper -->
 <div class="bg-wrapper">
     <div class="bg-photo"></div>
     <div class="bg-grid"></div>
 </div>
 
-<!-- Page Container -->
 <div class="register-container">
     <div class="register-card">
         <div class="register-header">
@@ -220,14 +204,12 @@
             <div class="input-group-premium">
                 <i class="bi bi-person-circle"></i>
                 <input id="name" type="text" class="form-control form-control-premium @error('name') is-invalid @enderror" 
-                       name="name" value="{{ old('name') }}" required autofocus placeholder="John Doe">
+                       name="name" value="{{ old('name') }}" required autofocus placeholder=" kebede berhe">
                 @error('name')
                     <span class="invalid-feedback-custom">{{ $message }}</span>
                 @enderror
             </div>
-
-            <!-- Email -->
-            <label class="form-label-custom">Authorized Email</label>
+            <label class="form-label-custom">Email: </label>
             <div class="input-group-premium">
                 <i class="bi bi-envelope-fill"></i>
                 <input id="email" type="email" class="form-control form-control-premium @error('email') is-invalid @enderror" 
@@ -238,7 +220,7 @@
             </div>
 
             <!-- Password -->
-            <label class="form-label-custom">Secure Password</label>
+            <label class="form-label-custom">Secure Password: </label>
             <div class="input-group-premium">
                 <i class="bi bi-lock-fill"></i>
                 <input id="password" type="password" class="form-control form-control-premium @error('password') is-invalid @enderror" 
@@ -249,19 +231,15 @@
             </div>
 
             <!-- Confirm Password -->
-            <label class="form-label-custom">Confirm Password</label>
+            <label class="form-label-custom">Confirm Password: </label>
             <div class="input-group-premium">
                 <i class="bi bi-shield-check"></i>
                 <input id="password-confirm" type="password" class="form-control form-control-premium" 
                        name="password_confirmation" required placeholder="••••••••">
             </div>
-
-            <!-- Submit -->
             <button type="submit" class="btn-register-submit">
                 Initialize Account <i class="bi bi-chevron-right ms-1"></i>
             </button>
-
-            <!-- Redirect -->
             <div class="register-footer">
                 Already registered? <a href="{{ route('login') }}">Sign In</a>
             </div>
