@@ -80,41 +80,49 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
+        /* --- LAYOUT: CONTENT SNAP TO SIDEBAR --- */
         @media (min-width: 992px) {
-        main {
-        /* 1. Start after the sidebar */
-            margin-left: var(--sidebar-width) !important;
-        
-        /* 2. Occupy the rest of the screen */
-            width: calc(100% - var(--sidebar-width)) !important;
-        
-        /* 3. Center the content inside this area */
-            display: flex !important;
-            justify-content: center !important; 
-            padding-top: var(--navbar-height) !important;
+            main {
+                /* Pushes content exactly to the sidebar edge */
+                margin-left: var(--sidebar-width) !important;
+                width: calc(100% - var(--sidebar-width)) !important;
+                padding-top: calc(var(--navbar-height) + 10px) !important;
+                display: block !important;
+            }
+
+            /* Force containers to start at the sidebar line (Left Aligned) */
+            .container, .container-fluid {
+                max-width: 100% !important;
+                width: 100% !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding-left: 15px !important; /* Tiny gap so text isn't stuck to the line */
+                padding-right: 25px !important;
+            }
         }
 
-        /* 4. Define the Width of your Dashboard */
-        .container {
-            /* This controls how "wide" the dashboard looks. 
-               Change 1200px to 1400px if you want it wider. */
-            max-width: 1200px !important; 
-            width: 95% !important;
-        
-            /* 5. Force equal distance on Left and Right */
-            margin-left: auto !important;
-            margin-right: auto !important;
-            padding-left: 15px !important;
-            padding-right: 15px !important;
+        /* --- CENTER CONTENT: NORMAL STYLE (NO GLOW/GLASS) --- */
+        .dashboard-hero, .stat-card, .card {
+            background: #1e293b !important; /* Solid Professional Navy */
+            backdrop-filter: none !important; /* Removed glass effect */
+            border: 1px solid #334155 !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important; /* Normal shadow, no glow */
+            color: #ffffff !important;
         }
 
-        /* 6. Ensure rows behave */
-        .row {
-            width: 100% !important;
-            margin-left: 0 !important;
-            margin-right: 0 !important;
+        /* CALENDAR FUNCTIONALITY FIX */
+        /* Calendars need a solid, non-transparent background to render correctly */
+        .calendar-card-body {
+            background: #ffffff !important; /* Normal white background for calendar */
+            color: #1e293b !important;
+            border-radius: 0 0 12px 12px;
+            min-height: 400px; /* Ensures calendar has space to show dates */
         }
-    }
+
+        /* Ensure the calendar text is visible */
+        .fc-view-harness, .fc {
+            color: #1e293b !important;
+        }
     </style>
 </head>
 <body>
