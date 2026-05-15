@@ -2,7 +2,6 @@
 
 @section('content')
 <style>
-    /* --- CRITICAL: THE HORIZONTAL CENTERING FIX --- */
     main {
         margin-left: 0 !important;   /* Kills the 260px sidebar gap */
         width: 100vw !important;     /* Uses 100% of the screen width */
@@ -12,6 +11,7 @@
         justify-content: center !important; /* Forces the card to the absolute middle */
     }
 
+    /* --- 2. CONTAINER POSITIONING --- */
     .reset-container {
         width: 100% !important;
         max-width: 100% !important;
@@ -26,10 +26,58 @@
         padding-top: 15vh; 
     }
 
-    /* Ensure the card has a fixed width so it doesn't stretch */
+    /* --- 3. THE GLASS CARD STYLING --- */
     .reset-card {
-        width: 420px !important; 
-        margin: 0 auto !important; /* Equal distance on left and right */
+        /* The magic lines for the glass look */
+        background: rgba(255, 255, 255, 0.03) !important; 
+        backdrop-filter: blur(20px) !important; 
+        -webkit-backdrop-filter: blur(20px);
+    
+        border: 1px solid rgba(255, 255, 255, 0.1) !important; 
+        border-radius: 24px !important;
+        padding: 50px 40px !important;
+        width: 100%;
+        max-width: 420px; 
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7) !important;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    /* --- 4. TEXT & INPUT VISIBILITY --- */
+    .reset-card h2 {
+        font-weight: 800;
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+        letter-spacing: -1px;
+    }
+
+    .reset-card p {
+        color: #94a3b8;
+        margin-bottom: 35px;
+        font-size: 0.9rem;
+    }
+
+    .form-control-premium {
+        background-color: rgba(15, 23, 42, 0.8) !important; /* Solid dark input */
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        color: #ffffff !important;
+        border-radius: 12px !important;
+        padding: 14px 15px 14px 45px !important;
+    }
+
+    /* Autofill Fix for visibility */
+    input:-webkit-autofill {
+        -webkit-text-fill-color: #ffffff !important;
+        -webkit-box-shadow: 0 0 0px 1000px #0f172a inset !important;
+    }
+
+    .btn-reset-submit {
+        background: #2563eb !important;
+        border-radius: 12px !important;
+        padding: 14px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase;
+        box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
     }
     /* 1. HIDE THE HEADER COMPLETELY */
     nav.navbar, .navbar {
