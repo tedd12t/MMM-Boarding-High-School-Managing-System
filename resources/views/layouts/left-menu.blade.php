@@ -1,5 +1,4 @@
 <style>
-    
     .sidebar-wrapper {
         position: fixed;
         top: 70px; 
@@ -11,12 +10,8 @@
         z-index: 1000;
         padding: 0;
         overflow-y: auto;
-    }
-
-    
+    } 
     .sidebar-brand { display: none; }
-
-    
     .nav-item .nav-link {
         padding: 14px 25px !important;
         color: #94a3b8 !important; 
@@ -27,7 +22,6 @@
         transition: 0.2s;
         border: none !important;
     }
-
     .nav-item .nav-link:hover {
         background: rgba(255, 255, 255, 0.03);
         color: #ffffff !important;
@@ -37,19 +31,15 @@
         background: #2563eb !important; 
         color: #ffffff !important;
     }
-
-   
     .submenu-box {
         background: #020617 !important; 
     }
-
     .submenu-box .nav-link {
         padding: 10px 25px 10px 55px !important;
         font-size: 0.85rem !important;
         color: #cbd5e1 !important; 
         font-weight: 600;
     }
-
     .submenu-box .nav-link:hover {
         color: #3b82f6 !important;
     }
