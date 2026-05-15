@@ -151,8 +151,7 @@
                             <span class="badge bg-primary mb-3 px-3 py-2 rounded-pill fw-bold" style="background: rgba(59, 130, 246, 0.2) !important;">
                                 <i class="bi bi-shield-check me-2"></i> Authorized Administrative Session
                             </span>
-                            <h1 class="display-5 fw-800 mb-2">Command Center</h1>
-                            <p class="lead opacity-75">Maychew Martyrs Memorial Special Boarding School</p>
+                            <h1 class="display-5 fw-800 mb-2">Maychew Martyrs Memorial Special Boarding School</h1>
                         </div>
                         <div class="col-md-4 text-end d-none d-md-block">
                             <i class="bi bi-cpu fs-1 opacity-25" style="font-size: 6rem !important;"></i>
