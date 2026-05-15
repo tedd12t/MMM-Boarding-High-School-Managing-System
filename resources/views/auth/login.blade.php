@@ -59,10 +59,17 @@
 
     /* --- CENTERED MEDIUM LOGIN CARD --- */
     .login-container {
-        width: 100%;
-        max-width: 420px; /* Medium Size */
-        padding-top: 10vh; /* Pushes it slightly towards the bottom */
-        z-index: 10;
+        flex: 1;
+        display: flex;
+        justify-content: center; /* This centers it horizontally */
+        align-items: flex-start; 
+    
+        /* DO NOT CHANGE THIS (Keep your top distance) */
+        padding-top: 20vh; 
+    
+        /* ADD THESE TWO LINES TO FIX THE CENTERING */
+        width: 100vw !important;  /* Forces container to use full screen width */
+        margin-left: 0 !important; /* Removes the sidebar gap for this page */
     }
 
     .login-card {
