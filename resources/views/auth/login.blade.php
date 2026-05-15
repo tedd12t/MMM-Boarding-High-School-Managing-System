@@ -2,7 +2,6 @@
 
 @section('content')
 <style>
-    /* --- THIS OVERRIDES THE GLOBAL SIDEBAR MARGIN --- */
     main {
         margin-left: 0 !important;
         width: 100% !important;
@@ -18,7 +17,6 @@
         display: flex !important;
         justify-content: center !important;
     }
-    /* 1. HIDE THE HEADER COMPLETELY */
     nav.navbar, .navbar {
         display: none !important;
     }
@@ -33,8 +31,6 @@
         align-items: center;
         justify-content: center;
     }
-
-    /* --- ANIMATED BACKGROUND --- */
     .bg-wrapper {
         position: fixed;
         top: 0; left: 0; width: 100%; height: 100%;
@@ -73,19 +69,14 @@
         to { transform: scale(1.1); }
     }
 
-    /* --- CENTERED MEDIUM LOGIN CARD --- */
     .login-container {
         flex: 1;
         display: flex;
-        justify-content: center; /* This centers it horizontally */
+        justify-content: center; 
         align-items: flex-start; 
-    
-        /* DO NOT CHANGE THIS (Keep your top distance) */
         padding-top: 20vh; 
-    
-        /* ADD THESE TWO LINES TO FIX THE CENTERING */
-        width: 100vw !important;  /* Forces container to use full screen width */
-        margin-left: 0 !important; /* Removes the sidebar gap for this page */
+        width: 100vw !important; 
+        margin-left: 0 !important; 
     }
 
     .login-card {
@@ -105,8 +96,6 @@
         margin-bottom: 30px;
         letter-spacing: -1px;
     }
-
-    /* --- INPUT FIX (NO WHITE BACKGROUND) --- */
     .input-group-premium {
         position: relative;
         margin-bottom: 25px;
@@ -122,11 +111,11 @@
     }
 
     .form-control-premium {
-        background-color: #0f172a !important; /* Dark solid base */
+        background-color: #0f172a !important; 
         border: 1px solid rgba(255, 255, 255, 0.1) !important;
         border-radius: 10px !important;
         padding: 14px 15px 14px 52px !important;
-        color: #ffffff !important; /* Text is always white */
+        color: #ffffff !important; 
         font-size: 1rem;
         transition: 0.3s ease;
         width: 100%;
@@ -137,8 +126,6 @@
         box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2) !important;
         outline: none;
     }
-
-    /* CRITICAL FIX: Forces browser to keep background dark and text white */
     input:-webkit-autofill,
     input:-webkit-autofill:hover, 
     input:-webkit-autofill:focus, 
@@ -147,8 +134,6 @@
         -webkit-box-shadow: 0 0 0px 1000px #0f172a inset !important;
         transition: background-color 5000s ease-in-out 0s;
     }
-
-    /* --- BUTTON & LINKS --- */
     .btn-login-submit {
         background: #2563eb !important;
         color: white !important;
@@ -184,13 +169,11 @@
     .form-check-label { color: #94a3b8; font-size: 0.85rem; }
 </style>
 
-<!-- Background Wrapper -->
 <div class="bg-wrapper">
     <div class="bg-photo"></div>
     <div class="bg-grid"></div>
 </div>
 
-<!-- Login Container -->
 <div class="login-container">
     <div class="login-card">
         <div class="login-header">
@@ -199,38 +182,29 @@
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
-
-            <!-- Email -->
             <div class="input-group-premium">
                 <i class="bi bi-person-fill"></i>
                 <input id="email" type="email" class="form-control form-control-premium" 
                        name="email" value="{{ old('email') }}" required autofocus placeholder="Email Address">
             </div>
 
-            <!-- Password -->
             <div class="input-group-premium">
                 <i class="bi bi-shield-lock-fill"></i>
                 <input id="password" type="password" class="form-control form-control-premium" 
                        name="password" required placeholder="Password">
             </div>
-
-            <!-- Options -->
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="remember" id="remember">
                     <label class="form-check-label ms-1" for="remember">Keep me signed in</label>
                 </div>
                 @if (Route::has('password.request'))
-                    <a href="{{ route('password.request') }}" class="text-white-50 small text-decoration-none">Forgot?</a>
+                    <a href="{{ route('password.request') }}" class="text-white-50 small text-decoration-none">Forgot Password?</a>
                 @endif
             </div>
-
-            <!-- Submit -->
             <button type="submit" class="btn-login-submit">
                 Go To Dashboard <i class="bi bi-arrow-right-short"></i>
             </button>
-
-            <!-- Bottom Link -->
             <div class="login-footer">
                 Don't have an account? <a href="{{ route('register') }}">Create One</a>
             </div>
