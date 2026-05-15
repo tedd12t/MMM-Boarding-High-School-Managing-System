@@ -136,13 +136,13 @@
     .scroll-container::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
 </style>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row g-0">
         <!-- Sidebar Inclusion -->
         @include('layouts.left-menu')
 
-        <div class="col-12">
-            <div class="pt-4">
+        <div class="col-12 px-0">
+            <div class="pt-3">
                 
                 <!-- 1. HIGH-LEVEL HERO BANNER -->
                 <div class="dashboard-hero shadow-lg">
