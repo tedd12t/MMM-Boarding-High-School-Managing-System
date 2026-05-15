@@ -2,7 +2,6 @@
 
 @section('content')
 <style>
-    /* --- THIS OVERRIDES THE GLOBAL SIDEBAR MARGIN --- */
     main {
         margin-left: 0 !important;
         width: 100% !important;
@@ -18,7 +17,6 @@
         display: flex !important;
         justify-content: center !important;
     }
-    /* 1. HIDE THE HEADER COMPLETELY */
     nav.navbar, .navbar {
         display: none !important;
     }
@@ -33,8 +31,6 @@
         align-items: center;
         justify-content: center;
     }
-
-    /* --- ANIMATED BACKGROUND SYSTEM --- */
     .bg-wrapper {
         position: fixed;
         top: 0; left: 0; width: 100%; height: 100%;
@@ -73,11 +69,10 @@
         to { transform: scale(1.1); }
     }
 
-    /* --- CENTERED MEDIUM RECOVERY CARD --- */
     .reset-container {
         width: 100%;
-        max-width: 420px; /* Medium Professional Size */
-        padding-top: 15vh; /* Centered slightly towards bottom */
+        max-width: 420px; 
+        padding-top: 15vh; 
         z-index: 10;
     }
 
@@ -104,8 +99,6 @@
         font-size: 0.9rem;
         margin-bottom: 35px;
     }
-
-    /* --- INPUT FIX (NO WHITE BACKGROUND) --- */
     .input-group-premium {
         position: relative;
         margin-bottom: 25px;
@@ -136,15 +129,11 @@
         box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2) !important;
         outline: none;
     }
-
-    /* Autofill Visibility Fix */
     input:-webkit-autofill {
         -webkit-text-fill-color: #ffffff !important;
         -webkit-box-shadow: 0 0 0px 1000px #0f172a inset !important;
         transition: background-color 5000s ease-in-out 0s;
     }
-
-    /* --- ALERT & BUTTONS --- */
     .alert-status {
         background: rgba(16, 185, 129, 0.1) !important;
         border: 1px solid rgba(16, 185, 129, 0.2) !important;
@@ -188,13 +177,11 @@
     }
 </style>
 
-<!-- Background Wrapper -->
 <div class="bg-wrapper">
     <div class="bg-photo"></div>
     <div class="bg-grid"></div>
 </div>
 
-<!-- Reset Page Container -->
 <div class="reset-container">
     <div class="reset-card">
         <div class="reset-header">
@@ -210,8 +197,6 @@
 
         <form method="POST" action="{{ route('password.email') }}">
             @csrf
-
-            <!-- Email Input -->
             <div class="input-group-premium">
                 <i class="bi bi-envelope-at-fill"></i>
                 <input id="email" type="email" class="form-control form-control-premium @error('email') is-invalid @enderror" 
@@ -221,13 +206,9 @@
             @error('email')
                 <p class="text-danger small fw-bold mt-n3 mb-3 text-start">{{ $message }}</p>
             @enderror
-
-            <!-- Submit Button -->
             <button type="submit" class="btn-reset-submit">
                 {{ __('Send Reset Link') }} <i class="bi bi-send-fill ms-2"></i>
             </button>
-
-            <!-- Back to Login -->
             <div class="reset-footer">
                 <a href="{{ route('login') }}"><i class="bi bi-arrow-left me-1"></i> Back to Sign In</a>
             </div>
