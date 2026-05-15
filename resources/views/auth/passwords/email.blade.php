@@ -2,6 +2,22 @@
 
 @section('content')
 <style>
+    /* --- THIS OVERRIDES THE GLOBAL SIDEBAR MARGIN --- */
+    main {
+        margin-left: 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+    }
+
+    .reset-container.login-container, .register-container {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
     /* 1. HIDE THE HEADER COMPLETELY */
     nav.navbar, .navbar {
         display: none !important;
