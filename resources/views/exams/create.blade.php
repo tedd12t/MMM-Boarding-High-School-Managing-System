@@ -2,7 +2,6 @@
 
 @section('content')
 <style>
-    /* High-Level UI for Academic Operations */
     .page-header h1 {
         font-weight: 800;
         color: #0f172a;
@@ -95,14 +94,11 @@
 
 <div class="container-fluid px-4">
     <div class="row">
-        <!-- Sidebar Inclusion -->
         @include('layouts.left-menu')
 
         <div class="col-lg-10">
             <div class="row pt-4">
                 <div class="col-12 ps-lg-5">
-                    
-                    <!-- Header Section -->
                     <div class="mb-4">
                         <h1 class="page-header mb-1">
                             <i class="bi bi-file-earmark-plus text-primary me-2"></i> Schedule New Examination
