@@ -2,7 +2,6 @@
 
 @section('content')
 <style>
-    /* --- BREADCRUMB MODERNIZATION --- */
     .breadcrumb {
         background: rgba(255, 255, 255, 0.03) !important;
         padding: 10px 20px !important;
@@ -17,8 +16,6 @@
     .breadcrumb-item.active {
         color: #94a3b8 !important;
     }
-
-    /* --- PAGE HEADER --- */
     .display-6 {
         font-weight: 800 !important;
         letter-spacing: -1px;
@@ -28,8 +25,6 @@
         color: #3b82f6;
         margin-right: 10px;
     }
-
-    /* --- GLASSMORPHISM FORM CARD --- */
     .password-card {
         background: rgba(255, 255, 255, 0.03) !important;
         border: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -39,8 +34,6 @@
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         margin-top: 20px;
     }
-
-    /* --- FORM CONTROLS --- */
     .form-label {
         color: #3b82f6 !important;
         font-weight: 700 !important;
@@ -64,14 +57,10 @@
         box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2) !important;
         outline: none;
     }
-
-    /* Input Autofill Fix */
     input:-webkit-autofill {
         -webkit-text-fill-color: #ffffff !important;
         -webkit-box-shadow: 0 0 0px 1000px #0f172a inset !important;
     }
-
-    /* --- BUTTONS --- */
     .btn-save-premium {
         background: #2563eb !important;
         color: white !important;
@@ -139,8 +128,6 @@
                                 </form>
                             </div>
                         </div>
-                        
-                        <!-- Optional Info Tip for the User -->
                         <div class="col-xl-4 col-lg-4 d-none d-xl-block">
                             <div class="p-4" style="background: rgba(59, 130, 246, 0.05); border-left: 4px solid #3b82f6; border-radius: 12px; margin-top: 20px;">
                                 <h5 class="text-primary fw-bold"><i class="bi bi-info-circle me-2"></i> Security Tip</h5>
