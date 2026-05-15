@@ -2,7 +2,6 @@
 
 @section('content')
 <style>
-     /* --- THIS OVERRIDES THE GLOBAL SIDEBAR MARGIN --- */
     main {
         margin-left: 0 !important;
         width: 100% !important;
@@ -18,7 +17,6 @@
         display: flex !important;
         justify-content: center !important;
     }
-    /* 1. HIDE THE HEADER COMPLETELY */
     nav.navbar, .navbar {
         display: none !important;
     }
@@ -33,8 +31,6 @@
         align-items: center;
         justify-content: center;
     }
-
-    /* --- ANIMATED BACKGROUND --- */
     .bg-wrapper {
         position: fixed;
         top: 0; left: 0; width: 100%; height: 100%;
@@ -73,15 +69,12 @@
         to { transform: scale(1.1); }
     }
 
-    /* --- CENTERED MEDIUM CARD --- */
     .verify-container {
-        width: 100vw !important;   /* Forces full screen width */
-        margin-left: 0 !important;  /* Removes the sidebar gap */
+        width: 100vw !important;   
+        margin-left: 0 !important;  
         display: flex;
-        justify-content: center;    /* Centers horizontally */
+        justify-content: center; 
         align-items: flex-start; 
-    
-        /* KEEP YOUR ORIGINAL TOP PADDING */
         padding-top: 15vh; 
         z-index: 10;
 
@@ -110,8 +103,6 @@
         margin-bottom: 20px;
         display: inline-block;
     }
-
-    /* --- SUCCESS ALERT --- */
     .alert-success-custom {
         background: rgba(16, 185, 129, 0.1) !important;
         border: 1px solid rgba(16, 185, 129, 0.2) !important;
@@ -122,8 +113,6 @@
         font-size: 0.85rem;
         font-weight: 600;
     }
-
-    /* --- INPUT FIX --- */
     .form-control-premium {
         background-color: #0f172a !important;
         border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -133,15 +122,11 @@
         transition: 0.3s ease;
         margin-bottom: 20px;
     }
-
-    /* Fix Autofill Background */
     input:-webkit-autofill {
         -webkit-text-fill-color: #ffffff !important;
         -webkit-box-shadow: 0 0 0px 1000px #0f172a inset !important;
         transition: background-color 5000s ease-in-out 0s;
     }
-
-    /* --- BUTTONS --- */
     .btn-submit-premium {
         background: #2563eb !important;
         color: white !important;
@@ -179,13 +164,12 @@
     }
 </style>
 
-<!-- Background Wrapper -->
+
 <div class="bg-wrapper">
     <div class="bg-photo"></div>
     <div class="bg-grid"></div>
 </div>
 
-<!-- Main Container -->
 <div class="verify-container">
     <div class="verify-card">
         
@@ -196,20 +180,16 @@
         <div class="verify-header">
             <h2>Security Portal</h2>
         </div>
-
-        <!-- Success Message Logic -->
         @if (session('resent') || session('status'))
             <div class="alert-success-custom" role="alert">
                 <i class="bi bi-check-circle-fill me-2"></i>
-                {{ session('resent') ? __('A fresh link has been sent to your inbox.') : session('status') }}
+                {{ session('resent') ? __('A link has been sent to your inbox.') : session('status') }}
             </div>
         @endif
 
         <p class="text-muted-custom">
             {{ __('Please follow the instructions sent to your email to verify your identity and secure your management account.') }}
         </p>
-
-        <!-- Dynamic Form Logic (Works for both Verify and Forgot Password) -->
         <form method="POST" action="{{ request()->is('password/*') ? route('password.email') : route('verification.resend') }}">
             @csrf
             
