@@ -2,14 +2,11 @@
 
 @section('content')
 <style>
-    /* High-Level UI for Administrative Forms */
     .page-header h1 {
         font-weight: 800;
         color: #0f172a;
         letter-spacing: -1px;
     }
-
-    /* Modern Breadcrumb Box */
     .breadcrumb-wrapper {
         background: #ffffff;
         padding: 12px 20px;
@@ -30,8 +27,6 @@
     .breadcrumb-item a:hover {
         color: #3b82f6;
     }
-
-    /* The Professional Edit Card */
     .edit-card {
         background: #ffffff;
         border-radius: 20px;
@@ -40,8 +35,6 @@
         padding: 40px;
         transition: transform 0.3s ease;
     }
-
-    /* Modern Label & Input Styling */
     .form-label-premium {
         font-weight: 700;
         font-size: 0.8rem;
@@ -67,8 +60,6 @@
         border-color: #3b82f6 !important;
         box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1) !important;
     }
-
-    /* High-Level Action Button */
     .btn-save-premium {
         background: linear-gradient(135deg, #0f172a 0%, #334155 100%) !important;
         color: white !important;
@@ -87,8 +78,6 @@
         box-shadow: 0 8px 15px rgba(15, 23, 42, 0.3);
         background: linear-gradient(135deg, #1e293b 0%, #475569 100%) !important;
     }
-
-    /* Helper Sidebar Info */
     .info-panel {
         background: #eff6ff;
         border-left: 4px solid #3b82f6;
@@ -100,14 +89,11 @@
 
 <div class="container-fluid px-4">
     <div class="row">
-        <!-- Professional Sidebar -->
         @include('layouts.left-menu')
 
         <div class="col-lg-10">
             <div class="row pt-4">
                 <div class="col-12 ps-lg-5">
-                    
-                    <!-- Header & Navigation -->
                     <div class="d-md-flex align-items-center justify-content-between mb-2">
                         <div>
                             <h1 class="page-header mb-1">
@@ -126,8 +112,6 @@
                     </div>
 
                     @include('session-messages')
-
-                    <!-- Main Edit Section -->
                     <div class="row mt-4">
                         <div class="col-xl-6 col-lg-8">
                             <div class="edit-card border">
@@ -164,14 +148,12 @@
                                 </form>
                             </div>
                         </div>
-
-                        <!-- Side Context Panel -->
                         <div class="col-xl-4 col-lg-4 d-none d-xl-block">
                             <div class="info-panel">
                                 <h6 class="fw-bold text-primary mb-3"><i class="bi bi-info-circle-fill me-2"></i> Admin Tip</h6>
                                 <p class="small text-dark opacity-75">
                                     For <strong>Maychew Martyrs Memorial</strong> standards, please ensure class names follow the 
-                                    <em>"Grade [Number] - [Description]"</em> format for consistency in academic reports.
+                                    <em>"Grade - [Number] "</em> format for consistency in academic reports.
                                 </p>
                                 <hr class="my-3 opacity-25">
                                 <div class="small fw-bold text-muted">
