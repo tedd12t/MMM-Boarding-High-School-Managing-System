@@ -59,11 +59,15 @@
 
     /* --- CENTERED MEDIUM REGISTRATION CARD --- */
     .register-container {
-        width: 100%;
-        max-width: 480px; /* Slightly wider for form balance */
-        padding-top: 10vh; /* Pushes sit slightly lower than center */
+        width: 100vw !important;   /* Forces full screen width */
+        margin-left: 0 !important;  /* Removes the sidebar gap */
+        display: flex;
+        justify-content: center;    /* Centers horizontally */
+        align-items: flex-start; 
+    
+        /* KEEP YOUR ORIGINAL TOP PADDING */
+        padding-top: 10vh; 
         z-index: 10;
-        padding-bottom: 50px;
     }
 
     .register-card {
