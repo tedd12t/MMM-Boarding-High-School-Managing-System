@@ -22,106 +22,110 @@
             --sidebar-width: 260px;
             --navbar-height: 70px;
             --primary-blue: #2563eb;
-            --dark-bg: #020617;
         }
 
-        body {
-            font-family: 'Inter', sans-serif !important;
-            background-color: var(--dark-bg) !important;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        /* --- BACKGROUND ANIMATION --- */
-        .app-bg-wrapper {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-            background: var(--dark-bg);
-        }
-        .app-bg-photo {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.95)), 
-                        url("{{ asset('images/school-photo.jpg') }}"); 
-            background-size: cover;
-            background-position: center;
-            animation: slowZoom 25s infinite alternate;
-        }
-        .app-bg-grid {
-            position: absolute;
-            width: 200%; height: 200%;
-            top: -50%; left: -50%;
-            background-image: 
-                linear-gradient(rgba(37, 99, 235, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(37, 99, 235, 0.1) 1px, transparent 1px);
-            background-size: 80px 80px;
-            transform: perspective(500px) rotateX(60deg);
-            animation: tunnelMove 15s linear infinite;
-        }
-        @keyframes tunnelMove {
-            0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
-            100% { transform: perspective(500px) rotateX(60deg) translateY(80px); }
-        }
-        @keyframes slowZoom {
-            from { transform: scale(1); }
-            to { transform: scale(1.1); }
-        }
-
-        /* --- FIXED NAVBAR --- */
+        /* --- 1. TOP NAVBAR (RESTORED TO ORIGINAL CLEAN LOOK) --- */
         .navbar {
             height: var(--navbar-height);
             position: fixed;
             top: 0; left: 0; width: 100%;
             z-index: 1050;
-            background: rgba(15, 23, 42, 0.9) !important;
-            backdrop-filter: blur(10px);
+            background: #0f172a !important; /* Solid Pro Navy */
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 0 20px;
         }
-        /* --- LAYOUT: CONTENT SNAP TO SIDEBAR --- */
+
+        /* User Profile Toggle (Restored) */
+        .nav-user-profile, 
+        .nav-user-profile:focus, 
+        .nav-user-profile:active,
+        .show > .nav-link {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            color: #ffffff !important;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .role-badge {
+            background: var(--primary-blue);
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        /* Restored Dropdown Menu Appearance */
+        .dropdown-menu {
+            background: #1e293b; /* Dark Navy */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            margin-top: 10px !important;
+        }
+
+        .dropdown-item {
+            color: #cbd5e1;
+            padding: 10px 20px;
+        }
+
+        .dropdown-item:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        /* --- 2. SIDEBAR (STAYS ON THE LEFT BELOW NAV) --- */
+        .sidebar-wrapper {
+            position: fixed;
+            top: var(--navbar-height);
+            left: 0;
+            width: var(--sidebar-width);
+            height: calc(100vh - var(--navbar-height));
+            background: #0f172a !important;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1000;
+        }
+
+        /* --- 3. CENTER CONTENT (SOLID & LEFT-ALIGNED) --- */
         @media (min-width: 992px) {
             main {
-                /* Pushes content exactly to the sidebar edge */
                 margin-left: var(--sidebar-width) !important;
                 width: calc(100% - var(--sidebar-width)) !important;
-                padding-top: calc(var(--navbar-height) + 10px) !important;
+                padding-top: calc(var(--navbar-height) + 20px) !important;
                 display: block !important;
             }
 
-            /* Force containers to start at the sidebar line (Left Aligned) */
             .container, .container-fluid {
                 max-width: 100% !important;
-                width: 100% !important;
                 margin-left: 0 !important;
-                margin-right: 0 !important;
-                padding-left: 15px !important; /* Tiny gap so text isn't stuck to the line */
-                padding-right: 25px !important;
+                padding-left: 20px !important;
+                padding-right: 30px !important;
             }
         }
 
-        /* --- CENTER CONTENT: NORMAL STYLE (NO GLOW/GLASS) --- */
+        /* Dashboard Cards (Solid look, no glow/glass) */
         .dashboard-hero, .stat-card, .card {
-            background: #1e293b !important; /* Solid Professional Navy */
-            backdrop-filter: none !important; /* Removed glass effect */
+            background: #1e293b !important; /* Solid Navy */
             border: 1px solid #334155 !important;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important; /* Normal shadow, no glow */
+            backdrop-filter: none !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2) !important;
             color: #ffffff !important;
         }
 
-        /* CALENDAR FUNCTIONALITY FIX */
-        /* Calendars need a solid, non-transparent background to render correctly */
-        .calendar-card-body {
-            background: #ffffff !important; /* Normal white background for calendar */
+        /* CALENDAR FIX (White background for functionality) */
+        .card-body {
+            background: #ffffff !important;
             color: #1e293b !important;
             border-radius: 0 0 12px 12px;
-            min-height: 400px; /* Ensures calendar has space to show dates */
         }
 
-        /* Ensure the calendar text is visible */
-        .fc-view-harness, .fc {
-            color: #1e293b !important;
+        .fc-theme-standard td, .fc-theme-standard th {
+            border: 1px solid #e2e8f0 !important;
         }
     </style>
 </head>
