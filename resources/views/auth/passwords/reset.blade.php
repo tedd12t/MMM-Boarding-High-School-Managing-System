@@ -2,7 +2,6 @@
 
 @section('content')
 <style>
-    /* --- THIS OVERRIDES THE GLOBAL SIDEBAR MARGIN --- */
     main {
         margin-left: 0 !important;
         width: 100% !important;
@@ -18,7 +17,6 @@
         display: flex !important;
         justify-content: center !important;
     }
-    /* 1. HIDE THE HEADER COMPLETELY */
     nav.navbar, .navbar {
         display: none !important;
     }
@@ -33,8 +31,6 @@
         align-items: center;
         justify-content: center;
     }
-
-    /* --- ANIMATED BACKGROUND SYSTEM --- */
     .bg-wrapper {
         position: fixed;
         top: 0; left: 0; width: 100%; height: 100%;
@@ -97,8 +93,6 @@
         margin-bottom: 35px;
         font-size: 0.9rem;
     }
-
-    /* --- FORM LABELS & INPUTS --- */
     .form-label-custom {
         color: #3b82f6;
         font-weight: 700;
@@ -139,15 +133,11 @@
         box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15) !important;
         outline: none;
     }
-
-    /* CRITICAL: Autofill Fix */
     input:-webkit-autofill {
         -webkit-text-fill-color: #ffffff !important;
         -webkit-box-shadow: 0 0 0px 1000px #0f172a inset !important;
         transition: background-color 5000s ease-in-out 0s;
     }
-
-    /* --- BUTTONS --- */
     .btn-reset-submit {
         background: #2563eb !important;
         color: white !important;
@@ -177,14 +167,10 @@
         display: block;
     }
 </style>
-
-<!-- Background Wrapper -->
 <div class="bg-wrapper">
     <div class="bg-photo"></div>
     <div class="bg-grid"></div>
 </div>
-
-<!-- Main Page Container -->
 <div class="reset-container">
     <div class="reset-card">
         <div class="reset-header">
