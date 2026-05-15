@@ -2,7 +2,7 @@
 
 @section('content')
 <style>
-        /* --- THIS OVERRIDES THE GLOBAL SIDEBAR MARGIN --- */
+     /* --- THIS OVERRIDES THE GLOBAL SIDEBAR MARGIN --- */
     main {
         margin-left: 0 !important;
         width: 100% !important;
