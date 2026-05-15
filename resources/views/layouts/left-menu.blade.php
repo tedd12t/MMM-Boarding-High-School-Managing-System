@@ -77,7 +77,7 @@
 </style>
 
 <!-- Updated Sidebar Structure -->
-<div class="sidebar-wrapper">
+<div class="col-xs-1 col-sm-1 col-md-1 col-lg-2 col-xl-2 col-xxl-2 px-0 sidebar-wrapper">
     <div class="d-flex flex-column pt-3">
         <ul class="nav flex-column w-100">
             
