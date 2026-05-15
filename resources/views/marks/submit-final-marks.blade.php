@@ -2,14 +2,11 @@
 
 @section('content')
 <style>
-    /* High-Level UI for Final Assessment */
     .page-header h1 {
         font-weight: 800;
         color: #0f172a;
         letter-spacing: -1px;
     }
-
-    /* Course Identity Banner */
     .course-banner {
         background: #ffffff;
         border-radius: 16px;
@@ -19,8 +16,6 @@
         margin-bottom: 30px;
         border-left: 6px solid #3b82f6;
     }
-
-    /* Premium Data Grid */
     .grading-container {
         background: #ffffff;
         border-radius: 20px;
@@ -108,7 +103,6 @@
 
 <div class="container-fluid px-4">
     <div class="row">
-        <!-- Professional Sidebar -->
         @include('layouts.left-menu')
 
         <div class="col-lg-10">
