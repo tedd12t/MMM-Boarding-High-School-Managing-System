@@ -2,28 +2,63 @@
 
 @section('content')
 <style>
-    /* --- FORCE CENTER OVERRIDE --- */
+    * --- 1. FORCE THE PAGE TO CENTER (Overrides Sidebar Margin) --- */
     main {
-        margin-left: 0 !important; /* Removes the 260px sidebar gap */
-        width: 100% !important;    /* Uses the whole screen width */
-        display: flex !important;
-        justify-content: center !important; /* Centers the content */
-    }
-
-    .reset-container {
-        width: 100% !important;
         margin-left: 0 !important;
-        padding-left: 0 !important;
+        width: 100% !important;
         display: flex !important;
         justify-content: center !important;
-        /* This keeps your top distance exactly as it is */
-        padding-top: 15vh; 
+        align-items: flex-start !important; /* Keeps your top distance */
     }
 
-    /* Ensure the card itself doesn't stretch too wide */
+    /* --- 2. CONTAINER POSITIONING --- */
+    .reset-container {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        padding-top: 15vh; /* This is the distance from top */
+        z-index: 10;
+    }
+
+    /* --- 3. THE MISSING CARD STYLING --- */
     .reset-card {
+        background: rgba(255, 255, 255, 0.03) !important; /* Semi-transparent */
+        border: 1px solid rgba(255, 255, 255, 0.08) !important; /* Subtle border */
+        backdrop-filter: blur(20px) !important; /* Glass blur effect */
+        border-radius: 20px !important;
+        padding: 50px 40px !important;
         width: 100%;
-        max-width: 420px; /* Keeps it the medium size you liked */
+        max-width: 420px; /* Medium professional size */
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6) !important;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    /* --- 4. TEXT & INPUT VISIBILITY --- */
+    .reset-card h2 {
+        font-weight: 800;
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+        color: #ffffff;
+    }
+
+    .reset-card p {
+        color: #64748b;
+        margin-bottom: 35px;
+    }
+
+    .form-control-premium {
+        background-color: #0f172a !important; /* Dark solid input background */
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        color: #ffffff !important;
+        border-radius: 10px !important;
+        padding: 14px;
+    }
+
+    /* Autofill Fix for typing visibility */
+    input:-webkit-autofill {
+        -webkit-text-fill-color: #ffffff !important;
+        -webkit-box-shadow: 0 0 0px 1000px #0f172a inset !important;
     }
     /* 1. HIDE THE HEADER COMPLETELY */
     nav.navbar, .navbar {
