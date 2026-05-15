@@ -2,7 +2,6 @@
 
 @section('content')
 <style>
-    /* High-Level UI for Academic Achievement */
     .page-header h1 {
         font-weight: 800;
         color: #0f172a;
@@ -17,8 +16,6 @@
         box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         border: 1px solid #e2e8f0;
     }
-
-    /* Course Hero Banner */
     .course-banner {
         background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         color: white;
@@ -30,8 +27,6 @@
         align-items: center;
         justify-content: space-between;
     }
-
-    /* Premium Data Grid */
     .marks-card {
         background: #ffffff;
         border-radius: 24px;
@@ -58,8 +53,6 @@
         font-weight: 600;
         border-bottom: 1px solid #f1f5f9;
     }
-
-    /* Final Result "Scoreboard" Styling */
     .final-result-card {
         background: #ffffff;
         border: 2px solid #3b82f6; /* Modern Blue Border */
@@ -92,8 +85,6 @@
         margin-top: 8px;
         display: block;
     }
-
-    /* Grade Badge Logic */
     .grade-badge-xl {
         background: #3b82f6;
         color: white;
@@ -115,7 +106,6 @@
 
 <div class="container-fluid px-4">
     <div class="row">
-        <!-- Professional Sidebar -->
         @include('layouts.left-menu')
 
         <div class="col-lg-10">
