@@ -2,7 +2,6 @@
 
 @section('content')
 <style>
-    /* High-Level UI for Data Entry */
     .attendance-header-box {
         background: white;
         border-radius: 16px;
@@ -21,8 +20,6 @@
         font-size: 0.85rem;
         border: 1px solid #e2e8f0;
     }
-
-    /* Modern Table Styling */
     .sheet-card {
         background: #ffffff;
         border-radius: 20px;
@@ -56,8 +53,6 @@
         vertical-align: middle;
         border-bottom: 1px solid #f1f5f9;
     }
-
-    /* ID Badge */
     .id-badge {
         background: #0f172a;
         color: white;
@@ -66,8 +61,6 @@
         font-family: monospace;
         font-size: 0.9rem;
     }
-
-    /* Modern Checkbox/Switch */
     .form-check-input {
         width: 1.5em;
         height: 1.5em;
@@ -80,7 +73,6 @@
         border-color: #10b981;
     }
 
-    /* Floating Submit Bar */
     .submit-bar {
         background: #ffffff;
         border-top: 1px solid #e2e8f0;
@@ -106,14 +98,12 @@
 
 <div class="container-fluid px-4">
     <div class="row">
-        <!-- Sidebar Inclusion -->
         @include('layouts.left-menu')
 
         <div class="col-lg-10">
             <div class="row pt-4">
                 <div class="col-12 ps-lg-5">
                     
-                    <!-- Top Header -->
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <div>
                             <h1 class="fw-800 text-dark mb-1">
@@ -124,8 +114,6 @@
                     </div>
 
                     @include('session-messages')
-
-                    <!-- Context Box -->
                     <div class="attendance-header-box d-flex align-items-center flex-wrap">
                         <div class="me-4">
                             <span class="text-muted small d-block mb-1 text-uppercase fw-bold">Active Class</span>
@@ -141,8 +129,6 @@
                             </span>
                         </div>
                     </div>
-
-                    <!-- Attendance Table Card -->
                     <div class="sheet-card shadow-sm border mb-5">
                         <form action="{{route('attendances.store')}}" method="POST">
                             @csrf
@@ -182,8 +168,6 @@
                                     @endforeach
                                 </tbody>
                             </table>
-
-                            <!-- Action Bar -->
                             @if(count($student_list) > 0 && $attendance_count < 1)
                             <div class="submit-bar text-center">
                                 <button type="submit" class="btn btn-submit-premium">
