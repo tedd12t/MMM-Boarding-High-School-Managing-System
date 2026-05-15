@@ -14,7 +14,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
 # Install dependencies WITHOUT scripts to avoid the Auth error
-RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs --no-scripts
+RUN composer install --optimize-autoloader --ignore-platform-reqs --no-scripts
 
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
