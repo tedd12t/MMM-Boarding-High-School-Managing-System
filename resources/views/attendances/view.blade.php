@@ -2,7 +2,6 @@
 
 @section('content')
 <style>
-    /* High-Level UI for List Views */
     .view-header-card {
         background: #ffffff;
         border-radius: 16px;
@@ -25,7 +24,6 @@
         font-weight: 500;
     }
 
-    /* Modern Table Design */
     .table-container {
         background: #ffffff;
         border-radius: 20px;
@@ -61,7 +59,6 @@
         border-bottom: 1px solid #f1f5f9;
     }
 
-    /* High-Level Status Badges */
     .status-badge {
         padding: 6px 14px;
         border-radius: 8px;
@@ -83,7 +80,6 @@
         border: 1px solid #ef4444;
     }
 
-    /* Counter Styling */
     .count-circle {
         width: 35px;
         height: 35px;
@@ -110,14 +106,12 @@
 
 <div class="container-fluid px-4">
     <div class="row">
-        <!-- Professional Sidebar -->
         @include('layouts.left-menu')
 
         <div class="col-lg-10">
             <div class="row pt-4">
                 <div class="col-12 ps-lg-5">
                     
-                    <!-- Header Section -->
                     <div class="d-md-flex align-items-center justify-content-between mb-4">
                         <div>
                             <nav aria-label="breadcrumb" class="breadcrumb-premium">
@@ -133,12 +127,11 @@
                         </div>
                     </div>
 
-                    <!-- Context Info Card -->
                     <div class="view-header-card">
                         <div class="row align-items-center">
                             <div class="col-md-7">
                                 @if(request()->query('course_name'))
-                                    <span class="text-muted small text-uppercase fw-bold d-block mb-1">Subject / Curriculum</span>
+                                    <span class="text-muted small text-uppercase fw-bold d-block mb-1">Subject </span>
                                     <h3 class="fw-bold mb-0"><i class="bi bi-book me-2 text-primary"></i>{{request()->query('course_name')}}</h3>
                                 @elseif(request()->query('section_name'))
                                     <span class="text-muted small text-uppercase fw-bold d-block mb-1">Class Section</span>
