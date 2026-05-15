@@ -142,7 +142,7 @@
         @include('layouts.left-menu')
 
         <div class="col-12 px-0">
-            <div class="pt-3">
+            <div class="pt-4 px-4">
                 
                 <!-- 1. HIGH-LEVEL HERO BANNER -->
                 <div class="dashboard-hero shadow-lg">
