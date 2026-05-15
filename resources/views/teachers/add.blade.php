@@ -2,7 +2,6 @@
 
 @section('content')
 <style>
-    /* High-Level UI for Faculty Management */
     .page-header h1 {
         font-weight: 800;
         color: #0f172a;
@@ -18,7 +17,6 @@
         border: 1px solid #e2e8f0;
     }
 
-    /* Elevated Enrollment Card */
     .enrollment-card {
         background: #ffffff;
         border-radius: 24px;
@@ -46,7 +44,6 @@
         margin-left: 15px;
     }
 
-    /* Professional Form Elements */
     .form-label-premium {
         font-weight: 700;
         font-size: 0.8rem;
@@ -70,7 +67,6 @@
         box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1) !important;
     }
 
-    /* Photo Upload Interface */
     .upload-surface {
         border: 2px dashed #cbd5e1;
         border-radius: 16px;
@@ -90,7 +86,6 @@
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    /* Primary Action Button */
     .btn-enroll {
         background: linear-gradient(135deg, #0f172a 0%, #334155 100%) !important;
         color: white !important;
@@ -118,7 +113,6 @@
 
 <div class="container-fluid px-4">
     <div class="row">
-        <!-- Professional Sidebar -->
         @include('layouts.left-menu')
 
         <div class="col-lg-10">
@@ -128,12 +122,12 @@
                     <!-- Header & Navigation -->
                     <div class="mb-4">
                         <h1 class="page-header mb-1">
-                            <i class="bi bi-person-plus-fill text-primary me-2"></i> Faculty Recruitment Portal
+                            <i class="bi bi-person-plus-fill text-primary me-2"></i> Teachers Recruitment
                         </h1>
                         <nav aria-label="breadcrumb" class="mt-2">
                             <ol class="breadcrumb breadcrumb-premium mb-0">
                                 <li class="breadcrumb-item"><a href="{{route('home')}}" class="text-decoration-none">Home</a></li>
-                                <li class="breadcrumb-item active fw-bold text-primary">Add Faculty Member</li>
+                                <li class="breadcrumb-item active fw-bold text-primary">Add Teacher Member</li>
                             </ol>
                         </nav>
                     </div>
@@ -147,7 +141,7 @@
 
                             <!-- SECTION 1: CORE IDENTITY -->
                             <div class="section-divider">
-                                <i class="bi bi-person-badge-fill me-2"></i> 01. Personal Identity
+                                <i class="bi bi-person-badge-fill me-2"></i> 01. Personal Identity: 
                             </div>
                             
                             <div class="row g-4">
@@ -171,16 +165,14 @@
                                     <input type="text" class="form-control form-control-premium" name="nationality" placeholder="Ethiopian" required value="{{old('nationality')}}">
                                 </div>
                             </div>
-
-                            <!-- SECTION 2: DIGITAL CREDENTIALS -->
                             <div class="section-divider">
                                 <i class="bi bi-shield-lock-fill me-2"></i> 02. Portal Access & Bio
                             </div>
                             
                             <div class="row g-4 align-items-center">
                                 <div class="col-md-4">
-                                    <label class="form-label-premium">Institutional Email<span class="required-mark">*</span></label>
-                                    <input type="email" class="form-control form-control-premium" name="email" placeholder="faculty@ut.com" required value="{{old('email')}}">
+                                    <label class="form-label-premium">Email <span class="required-mark">*</span></label>
+                                    <input type="email" class="form-control form-control-premium" name="email" placeholder="teacher@gmail.com" required value="{{old('email')}}">
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label-premium">Initial Password<span class="required-mark">*</span></label>
@@ -217,10 +209,6 @@
                                 <div class="col-md-6">
                                     <label class="form-label-premium">City / Region<span class="required-mark">*</span></label>
                                     <input type="text" class="form-control form-control-premium" name="city" placeholder="Maychew" required value="{{old('city')}}">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label-premium">Postal Code / Zip<span class="required-mark">*</span></label>
-                                    <input type="text" class="form-control form-control-premium" name="zip" placeholder="1000" required value="{{old('zip')}}">
                                 </div>
                             </div>
 
