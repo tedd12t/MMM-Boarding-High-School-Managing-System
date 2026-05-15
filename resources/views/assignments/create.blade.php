@@ -2,7 +2,6 @@
 
 @section('content')
 <style>
-    /* High-Level UI for Form Pages */
     .page-header {
         margin-bottom: 1.5rem;
     }
@@ -13,7 +12,6 @@
         letter-spacing: -1px;
     }
 
-    /* Modern Breadcrumbs */
     .breadcrumb-custom {
         background: #ffffff;
         padding: 10px 20px;
@@ -34,7 +32,6 @@
         color: #3b82f6;
     }
 
-    /* The Assignment Card */
     .form-card {
         background: #ffffff;
         border-radius: 20px;
@@ -68,12 +65,10 @@
         box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1) !important;
     }
 
-    /* File Input Specifics */
     input[type="file"].form-control-premium {
         padding: 0.6rem !important;
     }
 
-    /* Submit Button */
     .btn-create {
         background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
         color: white !important;
@@ -106,8 +101,6 @@
         <div class="col-lg-10">
             <div class="row pt-4">
                 <div class="col-12 ps-lg-5">
-                    
-                    <!-- Header & Navigation -->
                     <div class="page-header d-md-flex align-items-center justify-content-between">
                         <div>
                             <h1><i class="bi bi-file-earmark-plus text-primary me-2"></i> Create Assignment</h1>
@@ -123,7 +116,6 @@
 
                     @include('session-messages')
 
-                    <!-- Form Content -->
                     <div class="row mt-4">
                         <div class="col-xl-6 col-lg-8">
                             <div class="form-card">
@@ -134,14 +126,11 @@
 
                                 <form action="{{route('assignment.store')}}" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                    <!-- Original Logic Hidden Inputs -->
                                     <input type="hidden" name="session_id" value="{{$current_school_session_id}}">
                                     <input type="hidden" name="class_id" value="{{request()->query('class_id')}}">
                                     <input type="hidden" name="semester_id" value="{{request()->query('semester_id')}}">
                                     <input type="hidden" name="course_id" value="{{request()->query('course_id')}}">
                                     <input type="hidden" name="section_id" value="{{request()->query('section_id')}}">
-
-                                    <!-- Assignment Name -->
                                     <div class="mb-4">
                                         <label for="assignment-name" class="form-label-premium">Title / Assignment Name</label>
                                         <input type="text" 
@@ -151,8 +140,6 @@
                                                placeholder="e.g. Midterm Physics Project" 
                                                required>
                                     </div>
-
-                                    <!-- File Upload -->
                                     <div class="mb-4">
                                         <label for="assignment-file" class="form-label-premium">Upload Reference File</label>
                                         <input type="file" 
@@ -165,8 +152,6 @@
                                             <i class="bi bi-info-circle me-1"></i> Supports PDF, Word, Excel, Images, and ZIP archives.
                                         </div>
                                     </div>
-
-                                    <!-- Submit -->
                                     <div class="mt-5">
                                         <button type="submit" class="btn btn-create">
                                             <i class="bi bi-cloud-arrow-up-fill me-2"></i> Publish Assignment
@@ -178,8 +163,6 @@
                                 </form>
                             </div>
                         </div>
-                        
-                        <!-- Right Side Tip Box (High-Level Addition) -->
                         <div class="col-xl-4 col-lg-4 d-none d-xl-block">
                             <div class="p-4 rounded-4 bg-primary text-white shadow-sm" style="background: linear-gradient(135deg, #0f172a 0%, #334155 100%) !important;">
                                 <h6 class="fw-bold mb-3"><i class="bi bi-lightbulb me-2 text-warning"></i> Teacher's Tip</h6>
