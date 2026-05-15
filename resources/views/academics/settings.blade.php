@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-<!-- High-Level CSS for Settings Page -->
 <style>
     .settings-header {
         margin-bottom: 2rem;
@@ -13,7 +12,6 @@
         color: #0f172a;
     }
 
-    /* Professional Card Styling */
     .management-card {
         background: #ffffff;
         border: 1px solid #e2e8f0 !important;
@@ -45,7 +43,6 @@
         letter-spacing: 0.5px;
     }
 
-    /* Refined Form Controls */
     .form-control-modern {
         border-radius: 10px !important;
         border: 1px solid #cbd5e1 !important;
@@ -67,7 +64,6 @@
         margin-bottom: 0.4rem;
     }
 
-    /* Modern Warning Box */
     .info-box {
         background: #fef2f2;
         border-left: 4px solid #ef4444;
@@ -81,7 +77,6 @@
         border-left: 4px solid #3b82f6;
     }
 
-    /* Submit Button */
     .btn-action {
         background: #0f172a !important;
         color: white !important;
@@ -97,64 +92,53 @@
         background: #334155 !important;
         box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
     }
-    /* 1. DEFINE SIDEBAR WIDTH */
-:root {
-    --sidebar-width: 260px;
-    --navbar-height: 70px;
-}
 
-/* 2. PIN SIDEBAR BELOW NAVBAR */
-.sidebar-wrapper {
-    position: fixed;
-    top: var(--navbar-height); /* Starts right after navbar */
-    left: 0;
-    width: var(--sidebar-width);
-    height: calc(100vh - var(--navbar-height));
-    background: #0f172a !important;
-    border-right: 1px solid rgba(255, 255, 255, 0.05);
-    z-index: 1000;
-    overflow-y: auto;
-}
+    :root {
+        --sidebar-width: 260px;
+        --navbar-height: 70px;
+    }
 
-/* 3. THE KEY FIX: PUSH MAIN CONTENT TO THE RIGHT */
-main {
-    margin-left: var(--sidebar-width); /* Pushes content right */
-    padding-top: 20px;
-    width: calc(100% - var(--sidebar-width)); /* Ensures full width minus sidebar */
-    min-height: calc(100vh - var(--navbar-height));
-    display: block;
-    position: relative;
-}
-
-/* 4. FIX FOR THE DASHBOARD ROW */
-/* Since the sidebar is fixed, we remove the sidebar column from the grid logic */
-.dashboard-content-col {
-    width: 100% !important;
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-    padding-left: 30px !important;
-    padding-right: 30px !important;
-}
-
-/* Fix Navbar to stay above everything but respect the shift if needed */
-.navbar {
-    height: var(--navbar-height);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1050;
-}
+    .sidebar-wrapper {
+        position: fixed;
+        top: var(--navbar-height); 
+        left: 0;
+        width: var(--sidebar-width);
+        height: calc(100vh - var(--navbar-height));
+        background: #0f172a !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+        z-index: 1000;
+        overflow-y: auto;
+    }
+    main {
+        margin-left: var(--sidebar-width); 
+        padding-top: 20px;
+        width: calc(100% - var(--sidebar-width)); 
+        min-height: calc(100vh - var(--navbar-height));
+        display: block;
+        position: relative;
+    }
+    .dashboard-content-col {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+    .navbar {
+        height: var(--navbar-height);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1050;
+    }
 </style>
 <script src="{{ asset('js/masonry.pkgd.min.js') }}"></script>
 <div class="container-fluid px-4">
     <div class="row g-0">
         @include('layouts.left-menu')
-code
-Code
 <div class="col-lg-10">
         <div class="settings-header pt-4">
-            <h1><i class="bi bi-gear-wide-connected text-primary me-2"></i> Academic Control Center</h1>
-            <p class="text-muted">Configure your school structure, sessions, and permissions.</p>
+            <h1><i class="bi bi-gear-wide-connected text-primary me-2"></i> Academic Managment Center</h1>
             @include('session-messages')
         </div>
 
@@ -166,20 +150,20 @@ Code
                 <div class="p-4 management-card">
                     <div class="card-title-area">
                         <i class="bi bi-calendar-plus text-primary me-2"></i>
-                        <h6>Create New Session</h6>
+                        <h6>Create New Academic Year</h6>
                     </div>
                     <div class="info-box">
                         <small class="text-danger d-block">
-                            <i class="bi bi-shield-exclamation me-1"></i> Create one session per year. The last created becomes the active one.
+                            <i class="bi bi-shield-exclamation me-1"></i> Create New Academic Year per year!
                         </small>
                     </div>
                     <form action="{{route('school.session.store')}}" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <label class="form-label-custom">Academic Year Name</label>
-                            <input type="text" class="form-control form-control-modern" placeholder="e.g. 2024 - 2025" name="session_name" required>
+                            <label class="form-label-custom">Academic Year </label>
+                            <input type="text" class="form-control form-control-modern" placeholder="e.g. 2012 " name="session_name" required>
                         </div>
-                        <button class="btn btn-action" type="submit"><i class="bi bi-plus-circle me-2"></i> Initialize Session</button>
+                        <button class="btn btn-action" type="submit"><i class="bi bi-plus-circle me-2"></i> Initialize New Academic Year</button>
                     </form>
                 </div>
             </div>
@@ -190,13 +174,13 @@ Code
                 <div class="p-4 management-card">
                     <div class="card-title-area">
                         <i class="bi bi-search text-primary me-2"></i>
-                        <h6>Browse Archives</h6>
+                        <h6>Browse Past New Academic Years</h6>
                     </div>
-                    <p class="text-muted small mb-3">Switch view to historical data from previous sessions.</p>
+                    <p class="text-muted small mb-3">Switch view for historical data from previous Academic Years.</p>
                     <form action="{{route('school.session.browse')}}" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <label class="form-label-custom">Select Target Session</label>
+                            <label class="form-label-custom">Select Target Academic Year</label>
                             <select class="form-select form-select-modern" name="session_id" required>
                                 @isset($school_sessions)
                                     @foreach ($school_sessions as $school_session)
@@ -245,7 +229,7 @@ Code
                 <div class="p-4 management-card">
                     <div class="card-title-area">
                         <i class="bi bi-fingerprint text-primary me-2"></i>
-                        <h6>Attendance Logic</h6>
+                        <h6>Attendance: </h6>
                     </div>
                     <div class="info-box">
                         <small class="text-danger d-block">Do not switch types during an active semester.</small>
@@ -298,7 +282,7 @@ Code
                             <input class="form-control form-control-modern" name="section_name" type="text" placeholder="Section Name (A, B, C...)" required>
                         </div>
                         <div class="mb-2">
-                            <input class="form-control form-control-modern" name="room_no" type="text" placeholder="Assigned Room No." required>
+                            <input class="form-control form-control-modern" name="room_no" type="text" placeholder="Room No. " required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label-custom">Assign to Class</label>
@@ -332,9 +316,9 @@ Code
                             <div class="col-6">
                                 <label class="form-label-custom">Type</label>
                                 <select class="form-select form-select-modern" name="course_type" required>
-                                    <option value="Core">Core</option>
-                                    <option value="General">General</option>
-                                    <option value="Elective">Elective</option>
+                                    <option value="Core">Social Science</option>
+                                    <option value="General">Natural Science</option>
+                                    <option value="Elective">Both Social and Natural Science</option>
                                 </select>
                             </div>
                             <div class="col-6">
@@ -368,13 +352,13 @@ Code
                 <div class="p-4 management-card">
                     <div class="card-title-area">
                         <i class="bi bi-person-check text-primary me-2"></i>
-                        <h6>Assign Faculty</h6>
+                        <h6>Assign Teacher</h6>
                     </div>
                     <form action="{{route('school.teacher.assign')}}" method="POST">
                         @csrf
                         <input type="hidden" name="session_id" value="{{$current_school_session_id}}">
                         <div class="mb-2">
-                            <label class="form-label-custom">Select Faculty Member</label>
+                            <label class="form-label-custom">Select Teachers Member</label>
                             <select class="form-select form-select-modern" name="teacher_id" required>
                                 @isset($teachers)
                                     @foreach ($teachers as $teacher)
@@ -429,7 +413,7 @@ Code
                     <form action="{{route('school.final.marks.submission.status.update')}}" method="POST">
                         @csrf
                         <div class="info-box blue">
-                            <small class="text-primary d-block">Enable this only during the final assessment window.</small>
+                            <small class="text-primary d-block">Enable this only during the final assessment.</small>
                         </div>
                         <div class="form-check form-switch p-3 border rounded-3 mb-3 bg-white">
                             <input class="form-check-input ms-0 me-3" type="checkbox" name="marks_submission_status" id="marks_submission_status_check" {{($academic_setting->marks_submission_status == 'on')?'checked':''}}>
@@ -437,7 +421,7 @@ Code
                                 {{($academic_setting->marks_submission_status == 'on')?'Submission Open':'Submission Closed'}}
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-action"><i class="bi bi-lock me-2"></i> Save Status</button>
+                        <button type="submit" class="btn btn-action"><i class="bi bi-lock me-2"></i> Save </button>
                     </form>
                 </div>
             </div>
