@@ -2,14 +2,11 @@
 
 @section('content')
 <style>
-    /* High-Level UI for Academic Assessment */
     .page-header h1 {
         font-weight: 800;
         color: #0f172a;
         letter-spacing: -1px;
     }
-
-    /* Professional Notification Cards */
     .status-alert {
         border-radius: 12px;
         padding: 15px 20px;
@@ -21,8 +18,6 @@
     }
     .status-alert-info { background-color: #eff6ff; color: #1e40af; border-left: 4px solid #3b82f6; }
     .status-alert-success { background-color: #ecfdf5; color: #065f46; border-left: 4px solid #10b981; }
-
-    /* The "Command Bar" for Course Info */
     .context-card {
         background: #ffffff;
         border-radius: 16px;
@@ -31,8 +26,6 @@
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         margin-bottom: 25px;
     }
-
-    /* Premium Grading Sheet (Table) */
     .grading-sheet-card {
         background: #ffffff;
         border-radius: 20px;
@@ -72,8 +65,6 @@
         color: #1e293b;
         font-weight: 500;
     }
-
-    /* Input Field Styling */
     .mark-input {
         background-color: #f1f5f9 !important;
         border: 2px solid transparent !important;
@@ -91,8 +82,6 @@
         box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1) !important;
         transform: scale(1.05);
     }
-
-    /* Action Bar (Footer) */
     .action-bar {
         background: #f8fafc;
         padding: 20px 30px;
@@ -122,18 +111,15 @@
 
 <div class="container-fluid px-4">
     <div class="row">
-        <!-- Professional Sidebar -->
         @include('layouts.left-menu')
 
         <div class="col-lg-10">
             <div class="row pt-4">
                 <div class="col-12 ps-lg-5">
-                    
-                    <!-- Header Section -->
                     <div class="d-md-flex align-items-center justify-content-between mb-4">
                         <div>
                             <h1 class="page-header mb-1">
-                                <i class="bi bi-award-fill text-primary me-2"></i> Academic Grading Terminal
+                                <i class="bi bi-award-fill text-primary me-2"></i> Academic Grading
                             </h1>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb mb-0">
@@ -146,8 +132,6 @@
                     </div>
 
                     @include('session-messages')
-
-                    <!-- Dynamic Alerts (Original Logic) -->
                     @if ($academic_setting['marks_submission_status'] == "on")
                         <div class="status-alert status-alert-info">
                             <i class="bi bi-unlock-fill fs-4 me-3"></i>
@@ -167,8 +151,6 @@
                             </div>
                         </div>
                     @endif
-
-                    <!-- Context Overview -->
                     <div class="context-card border shadow-sm">
                         <div class="row align-items-center">
                             <div class="col-md-6">
@@ -181,8 +163,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Main Grading Form -->
                     <form action="{{route('course.mark.store')}}" method="POST">
                         @csrf
                         <input type="hidden" name="session_id" value="{{$current_school_session_id}}">
@@ -267,8 +247,6 @@
                                     </tbody>
                                 </table>
                             </div>
-
-                            <!-- Industrial Action Bar -->
                             <div class="action-bar d-flex align-items-center justify-content-between">
                                 <div>
                                     @if (!$final_marks_submitted && count($exams) > 0 && $academic_setting['marks_submission_status'] == "on")
