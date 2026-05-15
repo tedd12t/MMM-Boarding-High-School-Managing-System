@@ -24,5 +24,5 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.
 
 EXPOSE 80
 
-# Final discovery happens only when the server starts up
-CMD php artisan package:discover --ansi && php artisan key:generate && apache2-foreground
+# This command runs: Discover -> Migrate/Seed -> Start Server
+CMD php artisan package:discover --ansi && php artisan migrate:fresh --seed --force && apache2-foreground
