@@ -1,12 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Modern Calendar & Professional UI Styles -->
 <link rel="stylesheet" href="{{ asset('css/fullcalendar5.9.0.min.css') }}">
 <script src="{{ asset('js/fullcalendar5.9.0.main.min.js') }}"></script>
 
 <style>
-    /* High-Level Calendar Overrides */
     #attendanceCalendar {
         background: #ffffff;
         padding: 20px;
@@ -30,7 +28,6 @@
         text-decoration: none !important;
     }
 
-    /* Student Profile Header */
     .student-profile-card {
         background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
         color: white;
@@ -54,7 +51,6 @@
         font-size: 1.5rem;
     }
 
-    /* Premium Table Styling */
     .attendance-card {
         background: #ffffff;
         border-radius: 20px;
@@ -101,19 +97,14 @@
 <div class="container-fluid px-4">
     <div class="row">
         @include('layouts.left-menu')
-
         <div class="col-lg-10">
             <div class="row pt-4">
                 <div class="col-12 ps-lg-5">
-                    
-                    <!-- Page Header -->
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h1 class="fw-800 text-dark mb-0">
                             <i class="bi bi-calendar-check text-primary me-2"></i> Attendance Record
                         </h1>
                     </div>
-
-                    <!-- Student Hero Card -->
                     <div class="student-profile-card">
                         <div class="student-avatar-circle">
                             <i class="bi bi-person-fill"></i>
@@ -125,14 +116,11 @@
                     </div>
 
                     <div class="row g-4">
-                        <!-- Left: Calendar Column -->
                         <div class="col-xl-7">
                             <div class="attendance-card p-2 shadow-sm border">
                                 <div id="attendanceCalendar"></div>
                             </div>
                         </div>
-
-                        <!-- Right: Table History Column -->
                         <div class="col-xl-5">
                             <div class="attendance-card shadow-sm border">
                                 <div class="p-3 border-bottom bg-light">
