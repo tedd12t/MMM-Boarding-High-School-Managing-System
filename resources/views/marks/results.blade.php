@@ -2,14 +2,11 @@
 
 @section('content')
 <style>
-    /* High-Level UI for Results Analytics */
     .page-header h1 {
         font-weight: 800;
         color: #0f172a;
         letter-spacing: -1px;
     }
-
-    /* Modern Filter Control Station */
     .filter-station {
         background: #ffffff;
         border-radius: 20px;
@@ -43,7 +40,6 @@
         box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1) !important;
     }
 
-    /* Premium Results Grid */
     .results-card {
         background: #ffffff;
         border-radius: 24px;
@@ -78,7 +74,6 @@
         border-bottom: 1px solid #f1f5f9;
     }
 
-    /* Student Identity Styling */
     .avatar-placeholder {
         width: 40px;
         height: 40px;
@@ -91,7 +86,6 @@
         font-size: 1.2rem;
     }
 
-    /* Performance Badges */
     .grade-badge {
         padding: 6px 14px;
         border-radius: 10px;
@@ -102,7 +96,6 @@
         text-align: center;
     }
 
-    /* Dynamic Logic Color Classes */
     .grade-A { background: #ecfdf5; color: #059669; border: 1px solid #10b981; }
     .grade-B { background: #eff6ff; color: #1e40af; border: 1px solid #3b82f6; }
     .grade-C { background: #fffbeb; color: #b45309; border: 1px solid #f59e0b; }
@@ -146,8 +139,6 @@
                             </ol>
                         </nav>
                     </div>
-
-                    <!-- Control Station (Filters) -->
                     <div class="filter-station shadow-sm border">
                         <form action="{{route('course.mark.list.show')}}" method="GET">
                             <div class="row g-3 align-items-end">
@@ -190,8 +181,6 @@
                             </div>
                         </form>
                     </div>
-
-                    <!-- Results Sheet -->
                     <div class="results-card border shadow-sm mb-5">
                         <div class="table-responsive">
                             <table class="table premium-table mb-0">
