@@ -2,14 +2,11 @@
 
 @section('content')
 <style>
-    /* High-Level List Page Styling */
     .page-title {
         font-weight: 800;
         color: #0f172a;
         letter-spacing: -1px;
     }
-
-    /* Modern Table Card */
     .table-container-card {
         background: #ffffff;
         border-radius: 20px;
@@ -50,8 +47,6 @@
         font-weight: 500;
         border-bottom: 1px solid #f1f5f9;
     }
-
-    /* Download Button Styling */
     .btn-download {
         background-color: #ffffff;
         border: 1px solid #e2e8f0;
@@ -77,7 +72,6 @@
         margin-right: 8px;
     }
 
-    /* File Icon Decor */
     .file-icon-box {
         width: 40px;
         height: 40px;
@@ -89,8 +83,6 @@
         border-radius: 10px;
         margin-right: 15px;
     }
-
-    /* Empty State */
     .empty-state {
         padding: 60px;
         text-align: center;
@@ -100,14 +92,11 @@
 
 <div class="container-fluid px-4">
     <div class="row">
-        <!-- Professional Sidebar -->
         @include('layouts.left-menu')
 
         <div class="col-lg-10">
             <div class="row pt-4">
                 <div class="col-12 ps-lg-5">
-                    
-                    <!-- Header Section -->
                     <div class="d-md-flex align-items-center justify-content-between mb-4">
                         <div>
                             <h1 class="page-title mb-1">
@@ -122,10 +111,7 @@
                             </nav>
                         </div>
                     </div>
-
                     @include('session-messages')
-
-                    <!-- Main List Card -->
                     <div class="table-container-card mt-4">
                         <table class="table premium-table">
                             <thead>
