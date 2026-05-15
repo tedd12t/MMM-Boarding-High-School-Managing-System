@@ -2,14 +2,11 @@
 
 @section('content')
 <style>
-    /* High-Level UI for Attendance Management */
     .page-header h1 {
         font-weight: 800;
         color: #0f172a;
         letter-spacing: -1px;
     }
-
-    /* Class Cards */
     .class-card {
         background: #ffffff;
         border-radius: 16px;
@@ -39,14 +36,11 @@
         color: #3b82f6;
         margin-right: 10px;
     }
-
-    /* Attendance Action Items */
     .attendance-action-group {
         border-radius: 12px;
         overflow: hidden;
         border: 1px solid #f1f5f9;
     }
-
     .action-item {
         padding: 12px 20px !important;
         border: none !important;
@@ -57,31 +51,25 @@
         display: flex;
         align-items: center;
     }
-
     .action-item:last-child {
         border-bottom: none !important;
     }
-
     .action-item:hover {
         background-color: #eff6ff !important;
         color: #2563eb !important;
         padding-left: 25px !important;
     }
-
     .action-item i {
         margin-right: 12px;
         font-size: 1.1rem;
         opacity: 0.7;
     }
-
-    /* Modern Accordion Overrides */
     .accordion-item {
         border: 1px solid #f1f5f9 !important;
         border-radius: 12px !important;
         margin-bottom: 10px;
         overflow: hidden;
     }
-
     .accordion-button {
         background: #ffffff !important;
         font-weight: 600;
@@ -89,12 +77,10 @@
         box-shadow: none !important;
         padding: 15px 20px;
     }
-
     .accordion-button:not(.collapsed) {
         color: #2563eb !important;
         background: #f8fafc !important;
     }
-
     .course-title-badge {
         font-size: 0.75rem;
         text-transform: uppercase;
@@ -108,18 +94,15 @@
 
 <div class="container-fluid px-4">
     <div class="row">
-        <!-- Sidebar Inclusion -->
         @include('layouts.left-menu')
 
         <div class="col-lg-10">
             <div class="row pt-4">
                 <div class="col-12 ps-lg-5">
-                    
-                    <!-- Page Title -->
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <div>
                             <h1 class="page-header mb-1">
-                                <i class="bi bi-calendar2-check text-primary me-2"></i> Attendance Control
+                                <i class="bi bi-calendar2-check text-primary me-2"></i> Attendance Managment
                             </h1>
                             <p class="text-muted">Select a class or course to manage student presence.</p>
                         </div>
