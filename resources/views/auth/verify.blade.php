@@ -59,11 +59,16 @@
 
     /* --- CENTERED MEDIUM CARD --- */
     .verify-container {
-        width: 100%;
-        max-width: 450px; /* Medium Size */
-        padding-top: 10vh; /* Sit slightly lower than center */
+        width: 100vw !important;   /* Forces full screen width */
+        margin-left: 0 !important;  /* Removes the sidebar gap */
+        display: flex;
+        justify-content: center;    /* Centers horizontally */
+        align-items: flex-start; 
+    
+        /* KEEP YOUR ORIGINAL TOP PADDING */
+        padding-top: 15vh; 
         z-index: 10;
-        text-align: center;
+
     }
 
     .verify-card {
