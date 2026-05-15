@@ -2,14 +2,11 @@
 
 @section('content')
 <style>
-    /* High-Level UI for Grade Analytics */
     .page-header h1 {
         font-weight: 800;
         color: #0f172a;
         letter-spacing: -1px;
     }
-
-    /* Course Identity Banner */
     .identity-banner {
         background: #ffffff;
         border-radius: 16px;
@@ -22,8 +19,6 @@
         align-items: center;
         border-left: 6px solid #3b82f6;
     }
-
-    /* Premium Data Grid Container */
     .data-sheet-card {
         background: #ffffff;
         border-radius: 24px;
@@ -32,8 +27,6 @@
         overflow: hidden;
         margin-bottom: 50px;
     }
-
-    /* Professional Spreadsheet Table */
     .grading-grid thead th {
         background-color: #0f172a; /* Industrial Slate */
         color: #ffffff;
@@ -46,8 +39,6 @@
         white-space: nowrap;
         text-align: center;
     }
-
-    /* Align ID and Name to the left */
     .grading-grid thead th:nth-child(1),
     .grading-grid thead th:nth-child(2) {
         text-align: left;
@@ -68,7 +59,6 @@
         font-size: 0.9rem;
     }
 
-    /* Data Identity Styling */
     .student-id {
         font-family: 'JetBrains Mono', monospace;
         color: #64748b;
@@ -81,7 +71,6 @@
         font-weight: 700;
     }
 
-    /* Score Cell Styling */
     .score-cell {
         font-family: 'Inter', sans-serif;
         font-weight: 600;
@@ -89,15 +78,12 @@
         text-align: center;
         background: rgba(241, 245, 249, 0.5);
     }
-
-    /* Highlighting Major Assessments */
     .highlight-cell {
         background: #eff6ff;
         color: #1e40af;
         font-weight: 800;
     }
 
-    /* Scrollbar Styling for 4GB RAM Efficiency */
     .table-responsive::-webkit-scrollbar {
         height: 8px;
     }
@@ -112,7 +98,6 @@
 
 <div class="container-fluid px-4">
     <div class="row">
-        <!-- Professional Sidebar -->
         @include('layouts.left-menu')
 
         <div class="col-lg-10">
