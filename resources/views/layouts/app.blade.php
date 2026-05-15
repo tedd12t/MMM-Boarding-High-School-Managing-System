@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Unifiedtransform') }}</title>
+    <title>{{ config('app.name', 'MMM Boarding High School Managing System') }}</title>
 
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,19 +23,22 @@
             --navbar-height: 70px;
             --primary-blue: #2563eb;
         }
+        body {
+            
+            background-color: #020617 !important; 
+            color: #ffffff;
+            margin: 0;
+        }
 
-        /* --- 1. TOP NAVBAR (RESTORED TO ORIGINAL CLEAN LOOK) --- */
         .navbar {
             height: var(--navbar-height);
             position: fixed;
             top: 0; left: 0; width: 100%;
             z-index: 1050;
-            background: #0f172a !important; /* Solid Pro Navy */
+            background: #0f172a !important; 
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             padding: 0 20px;
         }
-
-        /* User Profile Toggle (Restored) */
         .nav-user-profile, 
         .nav-user-profile:focus, 
         .nav-user-profile:active,
@@ -59,10 +62,8 @@
             border-radius: 4px;
             margin-right: 10px;
         }
-
-        /* Restored Dropdown Menu Appearance */
         .dropdown-menu {
-            background: #1e293b; /* Dark Navy */
+            background: #1e293b; 
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             border-radius: 8px;
@@ -78,8 +79,6 @@
             background: var(--primary-blue);
             color: white;
         }
-
-        /* --- 2. SIDEBAR (STAYS ON THE LEFT BELOW NAV) --- */
         .sidebar-wrapper {
             position: fixed;
             top: var(--navbar-height);
@@ -90,8 +89,6 @@
             border-right: 1px solid rgba(255, 255, 255, 0.05);
             z-index: 1000;
         }
-
-        /* --- 3. CENTER CONTENT (SOLID & LEFT-ALIGNED) --- */
         @media (min-width: 992px) {
             main {
                 margin-left: var(--sidebar-width) !important;
@@ -108,16 +105,14 @@
             }
         }
 
-        /* Dashboard Cards (Solid look, no glow/glass) */
         .dashboard-hero, .stat-card, .card {
-            background: #1e293b !important; /* Solid Navy */
+            background: #1e293b !important; 
             border: 1px solid #334155 !important;
             backdrop-filter: none !important;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2) !important;
             color: #ffffff !important;
         }
 
-        /* CALENDAR FIX (White background for functionality) */
         .card-body {
             background: #ffffff !important;
             color: #1e293b !important;
@@ -130,7 +125,6 @@
     </style>
 </head>
 <body>
-    <!-- Global Animated Background -->
     <div class="app-bg-wrapper">
         <div class="app-bg-photo"></div>
         <div class="app-bg-grid"></div>
@@ -142,11 +136,10 @@
                 <a class="navbar-brand fw-bold" href="{{ url('/') }}">
                     <i class="bi bi-mortarboard-fill text-primary me-2"></i>
                     <span class="d-none d-lg-inline">Maychew Martyrs Memorial Boarding High School</span>
-                    <span class="d-lg-none">MMM Academy</span>
+                    <span class="d-lg-none">MMM Boarding High School</span>
                 </a>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Session logic omitted for brevity, keep your original center logic here -->
                     
                     <ul class="navbar-nav ms-auto align-items-center">
                         @guest
@@ -158,15 +151,12 @@
                                     {{ Auth::user()->first_name }}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end shadow-lg border-0">
-                                    <!-- User Info Header -->
                                     <div class="px-3 py-2 border-bottom mb-2">
-                                        <small class="text-muted d-block" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px;">Authorized Account</small>
+                                        <small class="text-muted d-block" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px;">Authorized Account: </small>
                                         <span class="fw-bold text-dark">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</span>
                                     </div>
-    
-                                    <!-- Security Link (THE MISSING PIECE) -->
                                     <a class="dropdown-item py-2" href="{{route('password.edit')}}">
-                                        <i class="bi bi-shield-lock-fill text-primary me-2"></i> Security Settings
+                                        <i class="bi bi-shield-lock-fill text-primary me-2"></i> Settings
                                     </a>
     
                                     <hr class="dropdown-divider opacity-5">
@@ -174,7 +164,7 @@
                                     <!-- Logout Link -->
                                     <a class="dropdown-item text-danger py-2" href="{{ route('logout') }}"
                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        <i class="bi bi-power me-2"></i> Log Out System
+                                        <i class="bi bi-power me-2"></i> Log Out
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
