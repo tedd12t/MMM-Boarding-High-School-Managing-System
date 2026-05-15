@@ -26,4 +26,10 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.
 
 EXPOSE 80
 
-CMD php artisan package:discover --ansi && php artisan migrate:fresh --seed --force && apache2-foreground
+# We added 'permission:cache-reset' and 'view:clear' to ensure no 500 errors
+CMD php artisan package:discover --ansi && \
+    php artisan migrate:fresh --seed --force && \
+    php artisan permission:cache-reset && \
+    php artisan view:clear && \
+    php artisan config:cache && \
+    apache2-foreground
