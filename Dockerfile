@@ -13,10 +13,12 @@ COPY . .
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
-# Install dependencies WITHOUT scripts to avoid the Auth error
 RUN composer install --optimize-autoloader --ignore-platform-reqs --no-scripts
 
+# THE PERMISSION FIX
+RUN mkdir -p /var/www/html/storage/app/purify/HTML
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
@@ -24,5 +26,4 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.
 
 EXPOSE 80
 
-# This command runs: Discover -> Migrate/Seed -> Start Server
 CMD php artisan package:discover --ansi && php artisan migrate:fresh --seed --force && apache2-foreground
