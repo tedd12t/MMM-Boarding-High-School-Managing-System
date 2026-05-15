@@ -2,14 +2,11 @@
 
 @section('content')
 <style>
-    /* High-Level UI for Curriculum Management */
     .page-header h1 {
         font-weight: 800;
         color: #0f172a;
         letter-spacing: -1px;
     }
-
-    /* Modern Breadcrumb Styling */
     .breadcrumb-premium {
         background: #ffffff;
         padding: 10px 20px;
@@ -25,7 +22,6 @@
         font-weight: 500;
     }
 
-    /* Elevated Form Card */
     .management-card {
         background: #ffffff;
         border-radius: 20px;
@@ -60,7 +56,6 @@
         box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1) !important;
     }
 
-    /* Action Buttons */
     .btn-save-premium {
         background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
         color: white !important;
@@ -75,8 +70,6 @@
     .btn-save-premium:hover {
         transform: translateY(-2px);
     }
-
-    /* Context Panel */
     .context-panel {
         background: #0f172a;
         color: #f1f5f9;
@@ -89,14 +82,11 @@
 
 <div class="container-fluid px-4">
     <div class="row g-0">
-        <!-- Professional Sidebar -->
         @include('layouts.left-menu')
 
         <div class="col-lg-10">
             <div class="row pt-4">
                 <div class="col-12 ps-lg-5">
-                    
-                    <!-- Header & Navigation -->
                     <div class="mb-4">
                         <h1 class="page-header mb-1">
                             <i class="bi bi-journal-medical text-primary me-2"></i> Curriculum Management
@@ -112,7 +102,6 @@
 
                     @include('session-messages')
 
-                    <!-- Content Layout -->
                     <div class="row mt-4 g-4">
                         <!-- Primary Form Column -->
                         <div class="col-xl-7 col-lg-8">
@@ -159,8 +148,6 @@
                                 </form>
                             </div>
                         </div>
-
-                        <!-- Side Context Panel (The "High-Level" Touch) -->
                         <div class="col-xl-4 col-lg-4 d-none d-xl-block">
                             <div class="context-panel">
                                 <h6 class="fw-bold text-primary mb-3">
