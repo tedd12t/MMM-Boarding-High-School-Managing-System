@@ -157,9 +157,29 @@
                                     <span class="badge bg-primary me-2">{{ Auth::user()->role }}</span>
                                     {{ Auth::user()->first_name }}
                                 </a>
-                                <div class="dropdown-menu dropdown-menu-end bg-dark border-secondary">
-                                    <a class="dropdown-item text-white" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
+                                <div class="dropdown-menu dropdown-menu-end shadow-lg border-0">
+                                    <!-- User Info Header -->
+                                    <div class="px-3 py-2 border-bottom mb-2">
+                                        <small class="text-muted d-block" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px;">Authorized Account</small>
+                                        <span class="fw-bold text-dark">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</span>
+                                    </div>
+    
+                                    <!-- Security Link (THE MISSING PIECE) -->
+                                    <a class="dropdown-item py-2" href="{{route('password.edit')}}">
+                                        <i class="bi bi-shield-lock-fill text-primary me-2"></i> Security Settings
+                                    </a>
+    
+                                    <hr class="dropdown-divider opacity-5">
+    
+                                    <!-- Logout Link -->
+                                    <a class="dropdown-item text-danger py-2" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <i class="bi bi-power me-2"></i> Log Out System
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                                 </div>
                             </li>
                         @endguest
