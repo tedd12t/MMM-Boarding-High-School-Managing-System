@@ -4,12 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ config('app.name', 'Unifiedtransform') }}</title>
+        <title>{{ config('app.name', 'MMM Boarding High School Manageing System') }}</title>
 
         <link rel="shortcut icon" href="{{asset('favicon_io/favicon.ico')}}">
         <link rel="apple-touch-icon" href="{{asset('favicon_io/apple-touch-icon.png')}}">
-
-        <!-- Modern Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
@@ -34,7 +32,6 @@
                 overflow-x: hidden;
             }
 
-            /* --- ANIMATED BACKGROUND --- */
             .hero-wrapper {
                 position: relative;
                 min-height: 100vh;
@@ -42,10 +39,10 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: flex-start; /* Changed to flex-start for better spacing */
+                justify-content: flex-start; 
                 overflow: hidden;
                 background: radial-gradient(circle at center, #0a192f 0%, #020617 100%);
-                padding-top: 120px; /* Space for fixed navbar */
+                padding-top: 120px; 
             }
 
             .grid-container {
@@ -73,7 +70,6 @@
                 z-index: 2;
             }
 
-            /* --- NAVIGATION --- */
             .navbar {
                 position: fixed;
                 top: 0; width: 100%;
@@ -114,7 +110,6 @@
                 font-size: 0.85rem;
                 text-decoration: none;
             }
-            /* --- HERO CONTENT --- */
             .hero-content {
                 position: relative;
                 z-index: 10;
@@ -125,16 +120,14 @@
             }
 
             .hero-title {
-                /* Reduced font size and improved line height */
                 font-size: clamp(1.8rem, 5vw, 3.5rem); 
                 font-weight: 800;
-                line-height: 1.2; /* Added space between lines */
+                line-height: 1.2;
                 text-transform: uppercase;
                 letter-spacing: -1px;
                 margin-bottom: 20px;
             }
 
-            /* --- SYSTEM INFO GRID --- */
             .info-section {
                 background: var(--dark-bg);
                 padding: 80px 0;
