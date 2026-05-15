@@ -2,14 +2,11 @@
 
 @section('content')
 <style>
-    /* High-Level UI for Classes Management */
     .page-header h1 {
         font-weight: 800;
         color: #0f172a;
         letter-spacing: -1px;
     }
-
-    /* Premium Class Card */
     .class-management-card {
         background: #ffffff;
         border-radius: 20px;
@@ -18,8 +15,6 @@
         margin-bottom: 30px;
         overflow: hidden;
     }
-
-    /* Modern Tab Styling */
     .card-header-custom {
         background: #f8fafc !important;
         border-bottom: 1px solid #e2e8f0 !important;
@@ -43,8 +38,6 @@
         color: #3b82f6 !important;
         border-bottom-color: #3b82f6 !important;
     }
-
-    /* Refined Accordion */
     .accordion-premium .accordion-item {
         border: 1px solid #f1f5f9 !important;
         border-radius: 12px !important;
@@ -64,8 +57,6 @@
         background: #eff6ff !important;
         color: #2563eb !important;
     }
-
-    /* Room Badge */
     .room-tag {
         background: #f1f5f9;
         color: #475569;
@@ -75,8 +66,6 @@
         font-size: 0.8rem;
         border: 1px solid #e2e8f0;
     }
-
-    /* Action List */
     .action-list-group .list-group-item {
         border: none;
         padding: 12px 0;
@@ -90,8 +79,6 @@
         padding-left: 10px;
         background: transparent;
     }
-
-    /* Premium Table */
     .table-clean thead th {
         background: #f8fafc;
         text-transform: uppercase;
@@ -122,12 +109,11 @@
         <div class="col-lg-10">
             <div class="row pt-4">
                 <div class="col-12 ps-lg-5">
-                    
-                    <!-- Header Section -->
+
                     <div class="d-md-flex align-items-center justify-content-between mb-4">
                         <div>
                             <h1 class="page-header mb-1">
-                                <i class="bi bi-diagram-3-fill text-primary me-2"></i> Academic Infrastructure
+                                <i class="bi bi-diagram-3-fill text-primary me-2"></i> Academic Managment
                             </h1>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb mb-0">
@@ -154,7 +140,7 @@
                                                 </li>
                                                 <li class="nav-item">
                                                     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#class{{$school_class->id}}-syllabus" type="button">
-                                                        <i class="bi bi-journal-bookmark me-2"></i>Syllabus
+                                                        <i class="bi bi-journal-bookmark me-2"></i>Syllabus/Topics
                                                     </button>
                                                 </li>
                                                 <li class="nav-item">
@@ -212,14 +198,12 @@
                                                         @endisset
                                                     </div>
                                                 </div>
-
-                                                <!-- Syllabus Tab -->
                                                 <div class="tab-pane fade" id="class{{$school_class->id}}-syllabus" role="tabpanel">
                                                     <div class="table-responsive">
                                                         <table class="table table-clean">
                                                             <thead>
                                                                 <tr>
-                                                                    <th>Syllabus Document Title</th>
+                                                                    <th>Syllabus/Topic Document Title</th>
                                                                     <th class="text-end">Resources</th>
                                                                 </tr>
                                                             </thead>
@@ -274,8 +258,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <!-- Footer Actions -->
                                         <div class="card-footer-custom d-flex justify-content-between align-items-center">
                                             <span class="text-muted fw-bold small">
                                                 <i class="bi bi-collection me-2"></i>Total Active Sections: {{$total_sections}}
