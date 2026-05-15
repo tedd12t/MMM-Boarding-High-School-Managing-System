@@ -11,7 +11,7 @@
         align-items: flex-start !important;
     }
 
-    .login-container, .register-container, .reset-container {
+    .reset-container {
         width: 100% !important;
         margin-left: 0 !important;
         padding-left: 0 !important;
@@ -72,15 +72,7 @@
         from { transform: scale(1); }
         to { transform: scale(1.1); }
     }
-
-    /* --- CENTERED MEDIUM RESET CARD --- */
-    .reset-container {
-        width: 100%;
-        max-width: 460px; /* Medium Professional Size */
-        padding-top: 10vh; /* Centered slightly towards bottom */
-        z-index: 10;
-    }
-
+    
     .reset-card {
         background: rgba(255, 255, 255, 0.03);
         border: 1px solid rgba(255, 255, 255, 0.08) !important;
