@@ -141,16 +141,13 @@
         <!-- Sidebar Inclusion -->
         @include('layouts.left-menu')
 
-        <div class="col-12 px-0">
+        <div class="col-lg-10 col-xl-10 col-xxl-10 px-0">
             <div class="pt-2">
                 
                 <!-- 1. HIGH-LEVEL HERO BANNER -->
                 <div class="dashboard-hero shadow-lg">
                     <div class="row align-items-center">
                         <div class="col-md-8">
-                            <span class="badge bg-primary mb-3 px-3 py-2 rounded-pill fw-bold" style="background: rgba(59, 130, 246, 0.2) !important;">
-                                <i class="bi bi-shield-check me-2"></i> Authorized Administrative Session
-                            </span>
                             <h1 class="display-5 fw-800 mb-2">Maychew Martyrs Memorial Special Boarding School</h1>
                         </div>
                         <div class="col-md-4 text-end d-none d-md-block">
