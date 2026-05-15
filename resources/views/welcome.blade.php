@@ -103,22 +103,17 @@
                 letter-spacing: 0.5px;
             }
 
-            .btn-login-main:active, 
-            .btn-login-main:focus {
-                background-color: #000000 !important; /* Turns background black */
-                color: #ffffff !important;           /* Ensures text is white */
-                border-color: #000000 !important;    /* Changes border to black */
-                box-shadow: none !important;          /* Removes the default blue glow */
-                transform: translateY(0);            /* Stops it from "lifting" while clicked */
+            .btn-login-main {
+                background: var(--primary-blue);
+                background-color: #000000 !important;
+                color: white;
+                border-color: #000000 !important;
+                padding: 8px 24px;
+                border-radius: 6px;
+                font-weight: 700;
+                font-size: 0.85rem;
+                text-decoration: none;
             }
-
-            /* Optional: change hover so the transition to black feels smoother */
-            .btn-login-main:hover {
-                background-color: #1e293b; /* Very dark navy before it goes pure black on click */
-                color: #ffffff;
-                border-color: #ffffff;
-            }
-
             /* --- HERO CONTENT --- */
             .hero-content {
                 position: relative;
