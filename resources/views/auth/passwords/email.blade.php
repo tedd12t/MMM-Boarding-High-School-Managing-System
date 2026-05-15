@@ -2,6 +2,29 @@
 
 @section('content')
 <style>
+    /* --- FORCE CENTER OVERRIDE --- */
+    main {
+        margin-left: 0 !important; /* Removes the 260px sidebar gap */
+        width: 100% !important;    /* Uses the whole screen width */
+        display: flex !important;
+        justify-content: center !important; /* Centers the content */
+    }
+
+    .reset-container {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        /* This keeps your top distance exactly as it is */
+        padding-top: 15vh; 
+    }
+
+    /* Ensure the card itself doesn't stretch too wide */
+    .reset-card {
+        width: 100%;
+        max-width: 420px; /* Keeps it the medium size you liked */
+    }
     /* 1. HIDE THE HEADER COMPLETELY */
     nav.navbar, .navbar {
         display: none !important;
@@ -56,26 +79,6 @@
         from { transform: scale(1); }
         to { transform: scale(1.1); }
     }
-
-    /* --- CENTERED MEDIUM RECOVERY CARD --- */
-    .reset-container {
-        width: 100%;
-        max-width: 420px; /* Medium Professional Size */
-        padding-top: 15vh; /* Centered slightly towards bottom */
-        z-index: 10;
-    }
-
-    .reset-card {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08) !important;
-        backdrop-filter: blur(20px);
-        border-radius: 20px !important;
-        padding: 50px 40px;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-        color: #ffffff;
-        text-align: center;
-    }
-
     .reset-header h2 {
         font-weight: 800;
         font-size: 2.2rem;
