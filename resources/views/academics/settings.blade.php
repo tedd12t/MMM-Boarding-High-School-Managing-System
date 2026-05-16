@@ -9,7 +9,7 @@
     .settings-header h1 {
         font-weight: 800;
         letter-spacing: -1px;
-        color: #0f172a;
+        color: #ffffff !important;
     }
 
     .management-card {
@@ -138,7 +138,7 @@
         @include('layouts.left-menu')
 <div class="col-lg-10">
         <div class="settings-header pt-4">
-            <h1><i class="bi bi-gear-wide-connected text-primary me-2"></i> Academic Managment Center</h1>
+            <h1><i class="bi bi-gear-wide-connected text-primary me-2"></i> Academic Management Center</h1>
             @include('session-messages')
         </div>
 
