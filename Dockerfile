@@ -40,11 +40,10 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.
 
 EXPOSE 80
 
-# Final Startup Command: Syncs logic, updates your credentials, and starts the server
 CMD php artisan package:discover --ansi && \
     php artisan migrate --force && \
     php artisan config:clear && \
     php artisan view:clear && \
     php artisan cache:clear && \
-    php artisan tinker --execute="\$u=\App\Models\User::where('role', 'admin')->first() ?: \App\Models\User::first(); if(\$u) { \$u->email='admin@MMM.com'; \$u->password=bcrypt('password'); \$u->save(); }" && \
+    php artisan tinker --execute="\$u=\App\Models\User::where('role', 'admin')->first() ?: \App\Models\User::first(); if(\$u) { \$u->first_name='Tedros'; \$u->last_name='Nigus'; \$u->email='admin@MMM.com'; \$u->password=bcrypt('password'); \$u->save(); }" && \
     apache2-foreground
