@@ -87,29 +87,48 @@
         background: #f1f5f9;
         overflow: hidden;
     }
-    .section-card {
-        background: white;
-        border-radius: 24px;
-        border: 1px solid #e2e8f0;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        height: 100%;
+    /* 1. Transform white cards to Dark Slate */
+    .gender-analysis-card, .section-card {
+        background: #1e293b !important; /* Matches the top stat cards */
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        border-radius: 20px !important;
+        color: #ffffff !important;
     }
 
+    /* 2. Fix the header area of the Calendar and Notices */
     .section-card-header {
-        padding: 20px 25px;
-        border-bottom: 1px solid #f1f5f9;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        background: rgba(255, 255, 255, 0.03) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+        padding: 15px 25px !important;
     }
 
     .section-card-header h5 {
-        font-weight: 800;
-        font-size: 1rem;
-        color: #0f172a;
-        margin-bottom: 0;
+        color: #ffffff !important;
+        font-weight: 700 !important;
     }
 
+    /* 3. Fix the Notice Accordion for Dark Mode */
+    .accordion-item {
+        background: transparent !important;
+        border-color: rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .accordion-button {
+        background: transparent !important;
+        color: #ffffff !important;
+        box-shadow: none !important;
+    }
+
+    .accordion-button:not(.collapsed) {
+        background: rgba(59, 130, 246, 0.1) !important;
+        color: #60a5fa !important;
+    }
+
+    /* 4. Fix the progress bar background */
+    .progress {
+        background: rgba(0, 0, 0, 0.3) !important;
+        height: 12px !important;
+    }
     .notice-item {
         border: none !important;
         border-bottom: 1px solid #f8fafc !important;
@@ -195,7 +214,9 @@
 
                 <!-- 3. GENDER DEMOGRAPHICS (High-Visibility Patch) -->
                 @if($studentCount > 0)
-                <div class="gender-analysis-card border shadow-sm mb-4" style="background: rgba(255,255,255,0.03) !important;">
+     <div class="row mb-4">
+          <div class="col-12">
+                <div class="gender-analysis-card border shadow-sm " style="background: rgba(255,255,255,0.03) !important;">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h6 class="fw-800 text-uppercase small text-white-50 mb-0" style="letter-spacing: 1px;">Student Body Composition</h6>
                         <div class="d-flex gap-3">
@@ -228,6 +249,8 @@
                         <span class="fw-bold text-white" style="font-size: 0.85rem;">{{ $femalePercent }}% Female</span>
                     </div>
                 </div>
+          </div>
+     </div>
                 @endif
                 <!-- 4. EVENTS & NOTICES -->
                 <div class="row g-4 mb-5">
