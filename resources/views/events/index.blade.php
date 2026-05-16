@@ -5,7 +5,7 @@
     /* High-Level UI for Management Surfaces */
     .page-title {
         font-weight: 800;
-        color: #0f172a;
+        color: #ffffff !important;
         letter-spacing: -1px;
     }
 
