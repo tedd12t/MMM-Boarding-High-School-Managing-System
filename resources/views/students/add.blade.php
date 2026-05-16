@@ -119,6 +119,8 @@
                     @include('session-messages')
 
                     <form action="{{route('school.student.create')}}" method="POST">
+                        <input type="hidden" name="address" value="Maychew">
+                        <input type="hidden" name="blood_type" value="Other">
                         <input type="hidden" name="zip" value="0000">
                         @csrf
                         
