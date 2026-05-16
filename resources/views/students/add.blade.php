@@ -88,26 +88,6 @@
         color: #3b82f6;
         margin-left: 3px;
     }
-
-    main .container-fluid {
-        padding-left: 15px !important; 
-        padding-right: 15px !important;
-    }
-
-    main .row {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-
-    main [class*="col-"] {
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-    }
-
-    .dashboard-hero {
-        margin-left: 10px !important;
-        margin-right: 10px !important;
-    }
 </style>
 
 <div class="container-fluid px-4">
