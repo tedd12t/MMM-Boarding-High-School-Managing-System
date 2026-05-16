@@ -119,6 +119,7 @@
                     @include('session-messages')
 
                     <form action="{{route('school.student.create')}}" method="POST">
+                        <input type="hidden" name="zip" value="0000">
                         @csrf
                         
                         <!-- CARD 1: PERSONAL PROFILE -->
@@ -225,10 +226,6 @@
                                 <div class="col-md-4">
                                     <label class="form-label-premium">City</label>
                                     <input type="text" class="form-control form-control-premium" name="city" required value="{{old('city')}}">
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label-premium">Postal/Zip Code</label>
-                                    <input type="text" class="form-control form-control-premium" name="zip" required value="{{old('zip')}}">
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label-premium">Student Mobile</label>
