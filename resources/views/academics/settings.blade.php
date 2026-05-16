@@ -238,11 +238,11 @@
                         @csrf
                         <div class="form-check p-3 border rounded-3 mb-2 bg-white">
                             <input class="form-check-input ms-0 me-2" type="radio" name="attendance_type" id="attendance_type_section" {{($academic_setting->attendance_type == 'section')?'checked':''}} value="section">
-                            <label class="form-check-label fw-bold" for="attendance_type_section">By Section</label>
+                            <label class="form-check-label text-black" for="attendance_type_section">By Section</label>
                         </div>
                         <div class="form-check p-3 border rounded-3 mb-3 bg-white">
                             <input class="form-check-input ms-0 me-2" type="radio" name="attendance_type" id="attendance_type_course" {{($academic_setting->attendance_type == 'course')?'checked':''}} value="course">
-                            <label class="form-check-label fw-bold" for="attendance_type_course">By Course</label>
+                            <label class="form-check-label text-black" for="attendance_type_course">By Course</label>
                         </div>
                         <button type="submit" class="btn btn-action"><i class="bi bi-save me-2"></i> Update Policy</button>
                     </form>
