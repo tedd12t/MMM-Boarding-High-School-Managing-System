@@ -40,11 +40,11 @@ RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.
 
 EXPOSE 80
 
-# This command clears old cache and starts fresh every time
+# Final Startup Command: Syncs logic, updates your credentials, and starts the server
 CMD php artisan package:discover --ansi && \
     php artisan migrate --force && \
     php artisan config:clear && \
     php artisan view:clear && \
     php artisan cache:clear && \
-    
-CMD php artisan package:discover --ansi && php artisan tinker --execute="\$u=\App\Models\User::first(); \$u->email='admin@MMM.com'; \$u->password=bcrypt('password'); \$u->save();" && apache2-foreground
+    php artisan tinker --execute="\$u=\App\Models\User::where('role', 'admin')->first() ?: \App\Models\User::first(); if(\$u) { \$u->email='admin@MMM.com'; \$u->password=bcrypt('password'); \$u->save(); }" && \
+    apache2-foreground
