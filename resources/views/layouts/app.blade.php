@@ -143,6 +143,19 @@
             color: #94a3b8 !important;
             letter-spacing: 1px;
         }
+        .row.g-0 {
+            margin: 0 !important;
+        }
+
+        .left-menu-container {
+            padding-right: 0 !important;
+            border-right: none !important; /* Removes any border that creates a visible gap */
+        }
+
+        /* Add a small padding inside the content so text isn't touching the sidebar */
+        .dashboard-hero, .stat-card, .section-card {
+            margin-left: 20px !important; 
+        }
     </style>
 </head>
 <body>
@@ -202,7 +215,6 @@
         <main>
             @yield('content')
         </main>
-           @include('layouts.footer')
     </div>
 </body>
 </html>
