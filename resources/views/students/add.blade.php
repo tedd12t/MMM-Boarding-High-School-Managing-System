@@ -120,8 +120,11 @@
 
                     <form action="{{route('school.student.create')}}" method="POST">
                         <input type="hidden" name="address" value="Maychew">
-                        <input type="hidden" name="blood_type" value="Other">
+                        <input type="hidden" name="address2" value="N/A">
+                        <input type="hidden" name="city" value="Maychew">
                         <input type="hidden" name="zip" value="0000">
+                        <input type="hidden" name="blood_type" value="Other">
+                        <input type="hidden" name="state" value="Tigray">
                         @csrf
                         
                         <!-- CARD 1: PERSONAL PROFILE -->
