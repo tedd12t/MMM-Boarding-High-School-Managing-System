@@ -2,14 +2,12 @@
 
 @section('content')
 <style>
-    /* High-Level UI for Enrollment */
     .page-header h1 {
         font-weight: 800;
         color: #0f172a;
         letter-spacing: -1px;
     }
 
-    /* Sectional Cards */
     .enrollment-card {
         background: #ffffff;
         border-radius: 20px;
@@ -58,7 +56,6 @@
         box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1) !important;
     }
 
-    /* Photo Upload Area */
     .photo-upload-zone {
         border: 2px dashed #cbd5e1;
         border-radius: 16px;
@@ -77,7 +74,6 @@
         border: 3px solid #3b82f6;
     }
 
-    /* Action Buttons */
     .btn-enroll {
         background: linear-gradient(135deg, #0f172a 0%, #334155 100%) !important;
         color: white !important;
@@ -88,10 +84,29 @@
         font-size: 1rem;
         box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.2);
     }
-
     .required-mark {
         color: #3b82f6;
         margin-left: 3px;
+    }
+
+    main .container-fluid {
+        padding-left: 15px !important; 
+        padding-right: 15px !important;
+    }
+
+    main .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    main [class*="col-"] {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .dashboard-hero {
+        margin-left: 10px !important;
+        margin-right: 10px !important;
     }
 </style>
 
