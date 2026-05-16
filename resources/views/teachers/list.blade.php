@@ -2,7 +2,6 @@
 
 @section('content')
 <style>
-    /* High-Level UI for Faculty Registry */
     .page-header h1 {
         font-weight: 800;
         color: #0f172a;
@@ -142,7 +141,7 @@
                     <div class="mb-4 d-md-flex align-items-center justify-content-between">
                         <div>
                             <h1 class="page-header mb-1">
-                                <i class="bi bi-person-workspace text-primary me-2"></i> Faculty Registry
+                                <i class="bi bi-person-workspace text-primary me-2"></i> Teachers Registry
                             </h1>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-premium mb-0">
@@ -153,14 +152,12 @@
                         </div>
                         <div class="mt-3 mt-md-0">
                             <span class="badge bg-soft-primary text-primary border border-primary px-3 py-2 rounded-pill">
-                                <i class="bi bi-people-fill me-1"></i> Total Faculty: {{ count($teachers) }}
+                                <i class="bi bi-people-fill me-1"></i> Total Teachers: {{ count($teachers) }}
                             </span>
                         </div>
                     </div>
 
                     @include('session-messages')
-
-                    <!-- Main Data Table Card -->
                     <div class="registry-card border shadow-sm mb-5">
                         <div class="table-responsive">
                             <table class="table premium-table mb-0">
@@ -189,7 +186,7 @@
                                             <td>
                                                 <div class="contact-cell">
                                                     <span class="contact-main">{{$teacher->first_name}} {{$teacher->last_name}}</span>
-                                                    <span class="contact-sub text-uppercase fw-bold"><i class="bi bi-shield-check text-success me-1"></i>Verified Faculty</span>
+                                                    <span class="contact-sub text-uppercase fw-bold"><i class="bi bi-shield-check text-success me-1"></i>Verified Teacher</span>
                                                 </div>
                                             </td>
                                             <td>
@@ -222,7 +219,7 @@
                                         <tr>
                                             <td colspan="5" class="py-5 text-center text-muted">
                                                 <i class="bi bi-person-x display-1 opacity-10 d-block mb-3"></i>
-                                                No faculty records found in the database.
+                                                No teachers records found in the database.
                                             </td>
                                         </tr>
                                     @endif
