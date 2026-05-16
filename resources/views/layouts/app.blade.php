@@ -68,7 +68,7 @@
         }
 
         .dropdown-item {
-            color: #cbd5e1;
+            color: #ffffff;
             padding: 10px 20px;
         }
 
