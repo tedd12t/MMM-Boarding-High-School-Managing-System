@@ -199,7 +199,7 @@
                     <label class="form-check-label ms-1" for="remember">Keep me signed in</label>
                 </div>
                 @if (Route::has('password.request'))
-                    <a href="{{ route('password.request') }}" class="text-white-50 small text-decoration-none">Forgot Password?</a>
+                    <a href="{{ route('password.request') }}" class="text-white-50 small text-decoration-none">Forgot?</a>
                 @endif
             </div>
             <button type="submit" class="btn-login-submit">
