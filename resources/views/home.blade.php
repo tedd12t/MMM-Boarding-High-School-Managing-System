@@ -193,31 +193,42 @@
                     </div>
                 </div>
 
-                <!-- 3. GENDER DEMOGRAPHICS (Original Logic) -->
+                <!-- 3. GENDER DEMOGRAPHICS (High-Visibility Patch) -->
                 @if($studentCount > 0)
-                <div class="gender-analysis-card border shadow-sm mb-4">
+                <div class="gender-analysis-card border shadow-sm mb-4" style="background: rgba(255,255,255,0.03) !important;">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h6 class="fw-800 text-uppercase small text-muted mb-0">Student Body Composition</h6>
+                        <h6 class="fw-800 text-uppercase small text-white-50 mb-0" style="letter-spacing: 1px;">Student Body Composition</h6>
                         <div class="d-flex gap-3">
-                            <small><i class="bi bi-circle-fill text-primary me-1"></i> Male</small>
-                            <small><i class="bi bi-circle-fill me-1" style="color: #60a5fa;"></i> Female</small>
+                            <small class="text-white"><i class="bi bi-circle-fill me-1" style="color: #3b82f6;"></i> Male</small>
+                            <small class="text-white"><i class="bi bi-circle-fill me-1" style="color: #60a5fa;"></i> Female</small>
                         </div>
                     </div>
+    
                     @php
-                        $maleStudentPercentage = round(($maleStudentsBySession/$studentCount), 2) * 100;
-                        $femaleStudentPercentage = 100 - $maleStudentPercentage;
+                        // Use ?? 0 to prevent PHP 8.3 crash if variables are missing
+                        $count = $studentCount ?? 1;
+                        $males = $maleStudentsBySession ?? 0;
+                        $malePercent = round(($males / $count) * 100);
+                        $femalePercent = 100 - $malePercent;
                     @endphp
-                    <div class="progress shadow-inner">
-                        <div class="progress-bar progress-bar-animated" role="progressbar" style="background-color: #3b82f6; width: {{$maleStudentPercentage}}%" aria-valuenow="{{$maleStudentPercentage}}" aria-valuemin="0" aria-valuemax="100"></div>
-                        <div class="progress-bar" role="progressbar" style="background-color: #60a5fa; width: {{$femaleStudentPercentage}}%" aria-valuenow="{{$femaleStudentPercentage}}" aria-valuemin="0" aria-valuemax="100"></div>
+
+                    <div class="progress shadow-sm" style="height: 15px; background: rgba(0,0,0,0.3); border-radius: 50px;">
+                        <div class="progress-bar" role="progressbar" 
+                             style="width: {{ $malePercent }}%; background-color: #3b82f6;" 
+                             aria-valuenow="{{ $malePercent }}" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                        <div class="progress-bar" role="progressbar" 
+                             style="width: {{ $femalePercent }}%; background-color: #60a5fa;" 
+                             aria-valuenow="{{ $femalePercent }}" aria-valuemin="0" aria-valuemax="100">
+                        </div>
                     </div>
-                    <div class="d-flex justify-content-between mt-2">
-                        <span class="small fw-bold">{{$maleStudentPercentage}}%</span>
-                        <span class="small fw-bold">{{$femaleStudentPercentage}}%</span>
+    
+                    <div class="d-flex justify-content-between mt-2 px-1">
+                        <span class="fw-bold text-white" style="font-size: 0.85rem;">{{ $malePercent }}% Male</span>
+                        <span class="fw-bold text-white" style="font-size: 0.85rem;">{{ $femalePercent }}% Female</span>
                     </div>
                 </div>
                 @endif
-
                 <!-- 4. EVENTS & NOTICES -->
                 <div class="row g-4 mb-5">
                     <!-- Events -->
