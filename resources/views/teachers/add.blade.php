@@ -197,14 +197,14 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label-premium">Permanent Address<span class="required-mark">*</span></label>
-                                    <input type="text" class="form-control form-control-premium" name="address" placeholder="Street / Sub-city" required value="{{old('address')}}">
+                                    <input type="text" class="form-control form-control-premium" name="address" placeholder="City" required value="{{old('address')}}">
                                 </div>
                                 <div class="col-md-12">
-                                    <label class="form-label-premium">Secondary Address (Optional)</label>
-                                    <input type="text" class="form-control form-control-premium" name="address2" placeholder="House no./kebele" value="{{old('address2')}}">
+                                    <label class="form-label-premium">Secondary Address</label>
+                                    <input type="text" class="form-control form-control-premium" name="address2" placeholder="kebele" value="{{old('address2')}}">
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label-premium">City / Region<span class="required-mark">*</span></label>
+                                    <label class="form-label-premium">Region<span class="required-mark">*</span></label>
                                     <input type="text" class="form-control form-control-premium" name="city" placeholder="Maychew" required value="{{old('city')}}">
                                 </div>
                             </div>
