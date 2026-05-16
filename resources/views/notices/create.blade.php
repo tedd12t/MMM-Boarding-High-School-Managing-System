@@ -84,12 +84,12 @@
                     <!-- Header Section -->
                     <div class="mb-4">
                         <h1 class="page-header mb-1">
-                            <i class="bi bi-megaphone-fill text-primary me-2"></i> Notice Broadcast Studio
+                            <i class="bi bi-megaphone-fill text-primary me-2"></i> Announcement Management
                         </h1>
                         <nav aria-label="breadcrumb" class="mt-2">
                             <ol class="breadcrumb breadcrumb-premium mb-0">
                                 <li class="breadcrumb-item"><a href="{{route('home')}}" class="text-decoration-none text-muted">Home</a></li>
-                                <li class="breadcrumb-item active fw-bold text-primary">Create Notice</li>
+                                <li class="breadcrumb-item active fw-bold text-primary">Create Announcement</li>
                             </ol>
                         </nav>
                     </div>
@@ -121,7 +121,7 @@
                                         </a>
                                         <div style="width: 300px;">
                                             <button type="submit" class="btn btn-publish-premium">
-                                                <i class="bi bi-send-fill me-2"></i> Publish to Notice Board
+                                                <i class="bi bi-send-fill me-2"></i> Publish to Announcement Board
                                             </button>
                                         </div>
                                     </div>
@@ -132,7 +132,7 @@
                         <!-- Side Visibility Panel -->
                         <div class="col-xl-4 col-lg-5 d-none d-lg-block">
                             <div class="broadcast-panel">
-                                <h6><i class="bi bi-broadcast me-2"></i> Broadcast Info</h6>
+                                <h6><i class="bi bi-broadcast me-2"></i> Announcement Info</h6>
                                 <p class="small opacity-75 mt-3">
                                     Once published, this notice will be instantly visible to:
                                 </p>
@@ -143,7 +143,7 @@
                                     </li>
                                     <li class="mb-3 d-flex align-items-center">
                                         <div class="me-3 p-2 bg-primary bg-opacity-10 rounded-circle"><i class="bi bi-person-badge text-primary"></i></div>
-                                        <span>All Academic Faculty</span>
+                                        <span>All Academic Teachers</span>
                                     </li>
                                     <li class="d-flex align-items-center">
                                         <div class="me-3 p-2 bg-primary bg-opacity-10 rounded-circle"><i class="bi bi-house-door text-primary"></i></div>
