@@ -48,11 +48,16 @@
         padding-top: 70px;  
         width: 100%;
         min-height: 100vh;
+        display: block; /
     }
     .container, .container-fluid {
         max-width: 100% !important;
-        padding-left: 30px !important;
-        padding-right: 30px !important;
+        padding-left: 10px !important; 
+        padding-right: 20px !important;
+    }
+    main .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 
     .nav-divider {
