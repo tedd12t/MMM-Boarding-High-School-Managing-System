@@ -80,3 +80,4 @@ class RegisterController extends Controller
         'zip'         => '0000', // Added this to prevent the "Zip Required" error too
     ]);
 }
+}
