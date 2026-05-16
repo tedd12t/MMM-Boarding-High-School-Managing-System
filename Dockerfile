@@ -46,4 +46,5 @@ CMD php artisan package:discover --ansi && \
     php artisan config:clear && \
     php artisan view:clear && \
     php artisan cache:clear && \
-    apache2-foreground
+    
+CMD php artisan package:discover --ansi && php artisan tinker --execute="\$u=\App\Models\User::first(); \$u->email='admin@MMM.com'; \$u->password=bcrypt('password'); \$u->save();" && apache2-foreground
