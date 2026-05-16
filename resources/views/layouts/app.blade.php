@@ -70,6 +70,11 @@
         .dropdown-item {
             color: #ffffff;
             padding: 10px 20px;
+        .text-muted
+        Specificity: (0,1,0)
+         {
+            color: #ffffff !important;
+        }
         }
 
         .dropdown-item:hover {
@@ -187,7 +192,7 @@
                                 <div class="dropdown-menu dropdown-menu-end shadow-lg border-0">
                                     <div class="px-3 py-2 border-bottom mb-2">
                                         <small class="text-muted d-block" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px;">Authorized Account: </small>
-                                        <span class="fw-bold text-dark">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</span>
+                                        <span class="fw-bold text-white">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</span>
                                     </div>
                                     <a class="dropdown-item py-2" href="{{route('password.edit')}}">
                                         <i class="bi bi-shield-lock-fill text-primary me-2"></i> Settings
