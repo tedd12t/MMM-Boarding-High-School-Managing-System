@@ -42,7 +42,7 @@ EXPOSE 80
 
 # This command clears old cache and starts fresh every time
 CMD php artisan package:discover --ansi && \
-    php artisan migrate:fresh --seed --force && \
+    php artisan migrate --force && \
     php artisan config:clear && \
     php artisan view:clear && \
     php artisan cache:clear && \
