@@ -2,7 +2,6 @@
 
 @section('content')
 <style>
-    /* High-Level UI for Faculty Dossier */
     .page-header h1 {
         font-weight: 800;
         color: #0f172a;
@@ -142,7 +141,7 @@
                     <!-- Header Section -->
                     <div class="mb-4">
                         <h1 class="page-header mb-1">
-                            <i class="bi bi-person-workspace text-primary me-2"></i> Faculty Master Profile
+                            <i class="bi bi-person-workspace text-primary me-2"></i> Teacher Profile
                         </h1>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb breadcrumb-premium mb-0">
@@ -164,7 +163,7 @@
                                     @endif
                                 </div>
                                 <h4 class="fw-bold text-dark mb-2">{{$teacher->first_name}} {{$teacher->last_name}}</h4>
-                                <span class="faculty-status-badge"><i class="bi bi-shield-check me-1"></i>Active Faculty</span>
+                                <span class="faculty-status-badge"><i class="bi bi-shield-check me-1"></i>Active Teacher</span>
                                 
                                 <hr class="my-4 opacity-10">
                                 
@@ -229,10 +228,6 @@
                                         <span class="info-label">City / Region</span>
                                         <span class="info-value">{{$teacher->city}}</span>
                                     </div>
-                                    <div class="info-item">
-                                        <span class="info-label">Postal / Zip Code</span>
-                                        <span class="info-value fw-bold" style="font-family: monospace;">{{$teacher->zip}}</span>
-                                    </div>
                                 </div>
                             </div>
 
@@ -248,7 +243,7 @@
                                     </div>
                                     <div class="info-item">
                                         <span class="info-label">Primary Role</span>
-                                        <span class="info-value"><span class="badge bg-primary px-3 rounded-pill">Academic Faculty</span></span>
+                                        <span class="info-value"><span class="badge bg-primary px-3 rounded-pill">Academic Teacher</span></span>
                                     </div>
                                 </div>
                             </div>
