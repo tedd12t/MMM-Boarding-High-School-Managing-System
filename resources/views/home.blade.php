@@ -244,7 +244,7 @@
                 </div>
                 @endif
                 <!-- 4. EVENTS & NOTICES -->
-                <div class="row g-4 mt-4">
+                <div class="row g-4 mb-4">
                     <!-- Events -->
                     <div class="col-lg-6">
                         <div class="section-card border shadow-sm">
