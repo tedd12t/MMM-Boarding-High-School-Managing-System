@@ -147,14 +147,13 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb breadcrumb-premium mb-0">
                                 <li class="breadcrumb-item"><a href="{{route('home')}}" class="text-decoration-none">Home</a></li>
-                                <li class="breadcrumb-item"><a href="{{route('teacher.list.show')}}" class="text-decoration-none">Faculty Registry</a></li>
+                                <li class="breadcrumb-item"><a href="{{route('teacher.list.show')}}" class="text-decoration-none">Teacher Registry</a></li>
                                 <li class="breadcrumb-item active fw-bold text-primary">Profile</li>
                             </ol>
                         </nav>
                     </div>
 
                     <div class="row g-4 mb-5">
-                        <!-- Left Panel: Professional Identity -->
                         <div class="col-xl-3 col-md-4">
                             <div class="faculty-identity-card border shadow-sm">
                                 <div class="faculty-avatar-wrapper">
