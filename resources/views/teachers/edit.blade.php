@@ -2,7 +2,6 @@
 
 @section('content')
 <style>
-    /* High-Level UI for Faculty Management */
     .page-header h1 {
         font-weight: 800;
         color: #0f172a;
@@ -104,7 +103,7 @@
                     <!-- Header Section -->
                     <div class="mb-4">
                         <h1 class="page-header mb-1">
-                            <i class="bi bi-person-gear text-primary me-2"></i> Faculty Profile Management
+                            <i class="bi bi-person-gear text-primary me-2"></i> Teacher Profile Management
                         </h1>
                         <nav aria-label="breadcrumb" class="mt-2">
                             <ol class="breadcrumb breadcrumb-premium mb-0">
@@ -120,6 +119,7 @@
                     <!-- Main Edit Interface -->
                     <div class="edit-card border shadow-sm">
                         <form action="{{route('school.teacher.update')}}" method="POST">
+                            <input type="hidden" name="zip" value="0000">
                             @csrf
                             {{-- Keeping original hidden logic --}}
                             <input type="hidden" name="teacher_id" value="{{$teacher->id}}">
@@ -182,10 +182,6 @@
                                 <div class="col-md-3">
                                     <label class="form-label-premium">City / Region<span class="required-mark">*</span></label>
                                     <input type="text" class="form-control form-control-premium" name="city" required value="{{$teacher->city}}">
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="form-label-premium">Zip / Postal Code<span class="required-mark">*</span></label>
-                                    <input type="text" class="form-control form-control-premium" name="zip" required value="{{$teacher->zip}}">
                                 </div>
                             </div>
 
