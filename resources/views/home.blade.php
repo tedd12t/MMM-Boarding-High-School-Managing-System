@@ -87,8 +87,6 @@
         background: #f1f5f9;
         overflow: hidden;
     }
-
-    /* Notice & Event Components */
     .section-card {
         background: white;
         border-radius: 24px;
@@ -140,7 +138,7 @@
         <!-- Sidebar Inclusion -->
         @include('layouts.left-menu')
 
-        <div class="col-lg-10 col-xl-10 col-xxl-10 px-0">
+        <div class="col-lg-10 p-0">
             <div class="pt-2">
                 
                 <!-- 1. HIGH-LEVEL HERO BANNER -->
