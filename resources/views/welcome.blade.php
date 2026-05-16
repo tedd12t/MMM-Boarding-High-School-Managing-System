@@ -239,6 +239,23 @@
                     </div>
                 </div>
             </div>
+            <!-- System Review Credentials -->
+            <div class="mt-4 pt-3">
+                <div class="d-inline-block p-3 rounded-4 border border-white border-opacity-10" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(5px);">
+                    <div class="d-flex align-items-center">
+                        <div class="me-3">
+                            <i class="bi bi-shield-lock-fill text-primary fs-4"></i>
+                        </div>
+                        <div class="text-start">
+                            <small class="text-white-50 d-block text-uppercase fw-bold" style="font-size: 0.65rem; letter-spacing: 1px;">System Review Access</small>
+                            <code class="text-white" style="font-size: 0.9rem;">
+                                Email: <span class="text-primary">admin@MMM.com</span> &nbsp;|&nbsp; Pass: <span class="text-primary">password</span>
+                            </code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <!-- Footer -->
