@@ -156,7 +156,7 @@
 
                                 <div class="col-md-6">
                                     <label class="form-label-premium">Email Address<span class="required-mark">*</span></label>
-                                    <input type="email" class="form-control form-control-premium" name="email" placeholder="student@ut.com" required value="{{old('email')}}">
+                                    <input type="email" class="form-control form-control-premium" name="email" placeholder="student@MMM.com" required value="{{old('email')}}">
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label-premium">Portal Password<span class="required-mark">*</span></label>
