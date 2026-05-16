@@ -131,11 +131,11 @@
                             <div class="row g-4">
                                 <div class="col-md-3">
                                     <label class="form-label-premium">First Name<span class="required-mark">*</span></label>
-                                    <input type="text" class="form-control form-control-premium" name="first_name" placeholder="John" required value="{{old('first_name')}}">
+                                    <input type="text" class="form-control form-control-premium" name="first_name" placeholder="kebede" required value="{{old('first_name')}}">
                                 </div>
                                 <div class="col-md-3">
                                     <label class="form-label-premium">Last Name<span class="required-mark">*</span></label>
-                                    <input type="text" class="form-control form-control-premium" name="last_name" placeholder="Doe" required value="{{old('last_name')}}">
+                                    <input type="text" class="form-control form-control-premium" name="last_name" placeholder="berhe" required value="{{old('last_name')}}">
                                 </div>
                                 <div class="col-md-3">
                                     <label class="form-label-premium">Gender<span class="required-mark">*</span></label>
@@ -157,28 +157,12 @@
                                     <label class="form-label-premium">Portal Password<span class="required-mark">*</span></label>
                                     <input type="password" class="form-control form-control-premium" name="password" required>
                                 </div>
-
-                                <div class="col-md-3">
-                                    <label class="form-label-premium">Blood Type</label>
-                                    <select class="form-select form-select-premium" name="blood_type" required>
-                                        <option {{old('blood_type') == 'A+' ? 'selected' : ''}}>A+</option>
-                                        <option {{old('blood_type') == 'A-' ? 'selected' : ''}}>A-</option>
-                                        <option {{old('blood_type') == 'B+' ? 'selected' : ''}}>B+</option>
-                                        <option {{old('blood_type') == 'B-' ? 'selected' : ''}}>B-</option>
-                                        <option {{old('blood_type') == 'O+' ? 'selected' : ''}}>O+</option>
-                                        <option {{old('blood_type') == 'O-' ? 'selected' : ''}}>O-</option>
-                                        <option {{old('blood_type') == 'AB+' ? 'selected' : ''}}>AB+</option>
-                                        <option {{old('blood_type') == 'AB-' ? 'selected' : ''}}>AB-</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
                                 <div class="col-md-3">
                                     <label class="form-label-premium">Religion</label>
                                     <select class="form-select form-select-premium" name="religion" required>
                                         <option {{old('religion') == 'Islam' ? 'selected' : ''}}>Islam</option>
-                                        <option {{old('religion') == 'Hinduism' ? 'selected' : ''}}>Hinduism</option>
-                                        <option {{old('religion') == 'Christianity' ? 'selected' : ''}}>Christianity</option>
-                                        <option {{old('religion') == 'Buddhism' ? 'selected' : ''}}>Buddhism</option>
+                                        <option {{old('religion') == 'Protestant' ? 'selected' : ''}}>Protestant</option>
+                                        <option {{old('religion') == 'Christian' ? 'selected' : ''}}>Christian</option>
                                         <option value="Others">Other</option>
                                     </select>
                                 </div>
@@ -209,7 +193,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <label class="form-label-premium">Father's Contact</label>
-                                    <input type="text" class="form-control form-control-premium" name="father_phone" required value="{{old('father_phone')}}">
+                                    <input type="text" class="form-control form-control-premium" name="father_phone" placeholder="+251xxxxxxxx" required value="{{old('father_phone')}}">
                                 </div>
                                 <div class="col-md-3">
                                     <label class="form-label-premium">Mother's Name</label>
@@ -217,11 +201,11 @@
                                 </div>
                                 <div class="col-md-3">
                                     <label class="form-label-premium">Mother's Contact</label>
-                                    <input type="text" class="form-control form-control-premium" name="mother_phone" required value="{{old('mother_phone')}}">
+                                    <input type="text" class="form-control form-control-premium" name="mother_phone" placeholder="+251xxxxxxxx" required value="{{old('mother_phone')}}">
                                 </div>
                                 <div class="col-md-12">
                                     <label class="form-label-premium">Primary Residence Address</label>
-                                    <input type="text" class="form-control form-control-premium" name="address" placeholder="Street, Building, Area" required value="{{old('address')}}">
+                                    <input type="text" class="form-control form-control-premium" name="parent_address" placeholder="Guardian's Permanent Address" required value="{{old('parent_address')}}">
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label-premium">City</label>
@@ -229,7 +213,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label-premium">Student Mobile</label>
-                                    <input type="text" class="form-control form-control-premium" name="phone" required value="{{old('phone')}}">
+                                    <input type="text" class="form-control form-control-premium" name="phone" placeholder="+251xxxxxxxx" required value="{{old('phone')}}">
                                 </div>
                             </div>
                         </div>
@@ -237,12 +221,12 @@
                         <!-- CARD 3: ACADEMIC PLACEMENT -->
                         <div class="enrollment-card">
                             <div class="card-indicator">
-                                <i class="bi bi-mortarboard-fill me-2"></i> 03. Institutional Placement
+                                <i class="bi bi-mortarboard-fill me-2"></i> 03. Placement
                             </div>
                             <div class="row g-4">
                                 <div class="col-md-12">
                                     <label class="form-label-premium">Institutional ID Number (Formatted)<span class="required-mark">*</span></label>
-                                    <input type="text" class="form-control form-control-premium" name="id_card_number" placeholder="2024-GRAD-SEC-ROLL" required value="{{old('id_card_number')}}">
+                                    <input type="text" class="form-control form-control-premium" name="id_card_number" placeholder="2018-MMM-No." required value="{{old('id_card_number')}}">
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label-premium">Academic Grade / Class</label>
