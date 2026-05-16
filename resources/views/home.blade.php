@@ -150,6 +150,13 @@
 
     .scroll-container::-webkit-scrollbar { width: 5px; }
     .scroll-container::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    /* Force Calendar text to be readable */
+    #full_calendar_events {
+        color: #ffffff !important;
+    }
+    .fc-day-number, .fc-col-header-cell-cushion {
+        color: #ffffff !important;
+    }
 </style>
 
 <div class="container-fluid">
