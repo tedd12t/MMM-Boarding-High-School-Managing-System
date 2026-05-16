@@ -140,8 +140,6 @@
             width: 100%;
             background-color: transparent;
         }
-
-        /* Optional: Styling for the footer text to make it look premium */
         .footer-text {
             font-size: 0.85rem;
             font-style: italic;
@@ -154,12 +152,29 @@
 
         .left-menu-container {
             padding-right: 0 !important;
-            border-right: none !important; /* Removes any border that creates a visible gap */
+            border-right: none !important;
         }
-
-        /* Add a small padding inside the content so text isn't touching the sidebar */
         .dashboard-hero, .stat-card, .section-card {
             margin-left: 20px !important; 
+        }
+        main .container-fluid {
+        padding-left: 15px !important; 
+        padding-right: 15px !important;
+        }
+
+        main .row {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        main [class*="col-"] {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+
+        .dashboard-hero {
+            margin-left: 10px !important;
+            margin-right: 10px !important;
         }
     </style>
 </head>
