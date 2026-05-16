@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'MMM Boarding High School Managing System') }}</title>
+    <title>MMM Academy | Portal</title>
 
+    <!-- Google Fonts & Bootstrap Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Scripts & Styles -->
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
@@ -19,78 +22,59 @@
             --sidebar-width: 260px;
             --navbar-height: 70px;
             --primary-blue: #2563eb;
-        }
-        body {
-            
-            background-color: #020617 !important; 
-            color: #ffffff;
-            margin: 0;
+            --dark-navy: #0f172a;
+            --deep-bg: #020617;
         }
 
+        body {
+            font-family: 'Inter', sans-serif !important;
+            background-color: var(--deep-bg) !important;
+            color: #ffffff;
+            margin: 0; padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* --- GLOBAL ANIMATED BACKGROUND --- */
+        .app-bg-wrapper {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; background: var(--deep-bg);
+        }
+        .app-bg-photo {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.95)), 
+                        url("{{ asset('images/school-photo.jpg') }}"); 
+            background-size: cover; background-position: center;
+            animation: slowZoom 30s infinite alternate;
+        }
+        .app-bg-grid {
+            position: absolute; width: 200%; height: 200%; top: -50%; left: -50%;
+            background-image: linear-gradient(rgba(37, 99, 235, 0.1) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(37, 99, 235, 0.1) 1px, transparent 1px);
+            background-size: 80px 80px;
+            transform: perspective(500px) rotateX(60deg);
+            animation: tunnelMove 20s linear infinite;
+        }
+        @keyframes tunnelMove { 0% { transform: perspective(500px) rotateX(60deg) translateY(0); } 100% { transform: perspective(500px) rotateX(60deg) translateY(80px); } }
+        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.1); } }
+
+        /* --- TOP NAVBAR --- */
         .navbar {
             height: var(--navbar-height);
-            position: fixed;
-            top: 0; left: 0; width: 100%;
-            z-index: 1050;
-            background: #0f172a !important; 
+            position: fixed; top: 0; left: 0; width: 100%;
+            z-index: 1050; background: var(--dark-navy) !important;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             padding: 0 20px;
         }
-        .nav-user-profile, 
-        .nav-user-profile:focus, 
-        .nav-user-profile:active,
-        .show > .nav-link {
-            background: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
-            color: #ffffff !important;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-        }
+        .navbar-brand { font-weight: 700; font-size: 0.95rem; text-transform: uppercase; color: white !important; }
+        .navbar-brand i { color: var(--primary-blue); font-size: 1.5rem; margin-right: 10px; }
 
-        .role-badge {
-            background: var(--primary-blue);
-            color: white;
-            text-transform: uppercase;
-            font-size: 0.65rem;
-            font-weight: 800;
-            padding: 3px 10px;
-            border-radius: 4px;
-            margin-right: 10px;
+        /* User Profile Toggle */
+        .nav-user-profile, .nav-user-profile:focus, .nav-user-profile:active {
+            background: transparent !important; border: none !important; box-shadow: none !important; color: white !important; font-weight: 600;
         }
-        .dropdown-menu {
-            background: #1e293b; 
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            border-radius: 8px;
-            margin-top: 10px !important;
-        }
+        .role-badge { background: var(--primary-blue); color: white; text-transform: uppercase; font-size: 0.65rem; font-weight: 800; padding: 3px 10px; border-radius: 4px; margin-right: 10px; }
 
-        .dropdown-item {
-            color: #ffffff;
-            padding: 10px 20px;
-        .text-muted
-        Specificity: (0,1,0)
-         {
-            color: #ffffff !important;
-        }
-        }
-
-        .dropdown-item:hover {
-            background: var(--primary-blue);
-            color: white;
-        }
-        .sidebar-wrapper {
-            position: fixed;
-            top: var(--navbar-height);
-            left: 0;
-            width: var(--sidebar-width);
-            height: calc(100vh - var(--navbar-height));
-            background: #0f172a !important;
-            border-right: 1px solid rgba(255, 255, 255, 0.05);
-            z-index: 1000;
-        }
+        /* --- THE LAYOUT SHIFT --- */
         @media (min-width: 992px) {
             main {
                 margin-left: var(--sidebar-width) !important;
@@ -98,117 +82,31 @@
                 padding-top: calc(var(--navbar-height) + 20px) !important;
                 display: block !important;
             }
-
-            .container, .container-fluid {
-                max-width: 100% !important;
-                margin-left: 0 !important;
-                padding-left: 20px !important;
-                padding-right: 30px !important;
-            }
+            .container-fluid { max-width: 100% !important; margin-left: 0 !important; padding: 0 30px !important; }
         }
 
-        .dashboard-hero, .stat-card, .card {
-            background: #1e293b !important; 
-            border: 1px solid #334155 !important;
-            backdrop-filter: none !important;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2) !important;
-            color: #ffffff !important;
-        }
-
-        .card-body {
-            background: #ffffff !important;
-            color: #1e293b !important;
-            border-radius: 0 0 12px 12px;
-        }
-
-        .fc-theme-standard td, .fc-theme-standard th {
-            border: 1px solid #e2e8f0 !important;
-        }
-        #app {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Full height of the screen */
-        }
-
-        main {
-            flex: 1 0 auto; /* This area grows to fill space, pushing footer down */
-        }
-
-        footer, .footer-content {
-            flex-shrink: 0; /* Prevents footer from squishing */
-            padding: 30px 0;
-            width: 100%;
-            background-color: transparent;
-        }
-
-        /* Optional: Styling for the footer text to make it look premium */
-        .footer-text {
-            font-size: 0.85rem;
-            font-style: italic;
-            color: #94a3b8 !important;
-            letter-spacing: 1px;
-        }
-        .row.g-0 {
-            margin: 0 !important;
-        }
-
-        .left-menu-container {
-            padding-right: 0 !important;
-            border-right: none !important; /* Removes any border that creates a visible gap */
-        }
-
-        /* Add a small padding inside the content so text isn't touching the sidebar */
-        .dashboard-hero, .stat-card, .section-card {
-            margin-left: 20px !important; 
-        }
+        /* Autofill Fix for all pages */
+        input:-webkit-autofill { -webkit-text-fill-color: white !important; -webkit-box-shadow: 0 0 0px 1000px #0f172a inset !important; }
     </style>
 </head>
 <body>
-    <div class="app-bg-wrapper">
-        <div class="app-bg-photo"></div>
-        <div class="app-bg-grid"></div>
-    </div>
-
+    <div class="app-bg-wrapper"><div class="app-bg-photo"></div><div class="app-bg-grid"></div></div>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark">
-            <div class="container-fluid px-4">
-                <a class="navbar-brand fw-bold" href="{{ url('/') }}">
-                    <i class="bi bi-mortarboard-fill text-primary me-2"></i>
-                    <span class="d-none d-lg-inline">Maychew Martyrs Memorial Boarding High School</span>
-                    <span class="d-lg-none">MMM Boarding High School</span>
-                </a>
-
+            <div class="container-fluid px-0">
+                <a class="navbar-brand" href="{{ url('/') }}"><i class="bi bi-mortarboard-fill"></i> MMM Boarding High School</a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    
                     <ul class="navbar-nav ms-auto align-items-center">
                         @guest
-                            <li class="nav-item"><a class="btn btn-primary btn-sm px-4" href="{{ route('login') }}">Login</a></li>
+                            <li class="nav-item"><a class="btn btn-primary btn-sm px-4 fw-bold" href="{{ route('login') }}">Login</a></li>
                         @else
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle nav-user-profile" href="#" data-bs-toggle="dropdown">
-                                    <span class="badge bg-primary me-2">{{ Auth::user()->role }}</span>
-                                    {{ Auth::user()->first_name }}
+                                    <span class="role-badge">{{ Auth::user()->role }}</span> {{ Auth::user()->first_name }}
                                 </a>
-                                <div class="dropdown-menu dropdown-menu-end shadow-lg border-0">
-                                    <div class="px-3 py-2 border-bottom mb-2">
-                                        <small class="text-muted d-block" style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px;">Authorized Account: </small>
-                                        <span class="fw-bold text-white">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</span>
-                                    </div>
-                                    <a class="dropdown-item py-2" href="{{route('password.edit')}}">
-                                        <i class="bi bi-shield-lock-fill text-primary me-2"></i> Settings
-                                    </a>
-    
-                                    <hr class="dropdown-divider opacity-5">
-    
-                                    <!-- Logout Link -->
-                                    <a class="dropdown-item text-danger py-2" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        <i class="bi bi-power me-2"></i> Log Out
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+                                <div class="dropdown-menu dropdown-menu-end bg-dark border-secondary">
+                                    <a class="dropdown-item text-white" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
                                 </div>
                             </li>
                         @endguest
@@ -216,10 +114,7 @@
                 </div>
             </div>
         </nav>
-
-        <main>
-            @yield('content')
-        </main>
+        <main>@yield('content')</main>
     </div>
 </body>
 </html>
