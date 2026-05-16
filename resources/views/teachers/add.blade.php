@@ -135,6 +135,7 @@
                     @include('session-messages')
                     <div class="enrollment-card border shadow-sm mb-5">
                         <form action="{{route('school.teacher.create')}}" method="POST">
+                            <input type="hidden" name="zip" value="0000">
                             @csrf
 
                             <!-- SECTION 1: CORE IDENTITY -->
