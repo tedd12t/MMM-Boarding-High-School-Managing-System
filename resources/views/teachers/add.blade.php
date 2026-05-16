@@ -133,8 +133,6 @@
                     </div>
 
                     @include('session-messages')
-
-                    <!-- Main Enrollment Surface -->
                     <div class="enrollment-card border shadow-sm mb-5">
                         <form action="{{route('school.teacher.create')}}" method="POST">
                             @csrf
@@ -142,8 +140,7 @@
                             <!-- SECTION 1: CORE IDENTITY -->
                             <div class="section-divider">
                                 <i class="bi bi-person-badge-fill me-2"></i> 01. Personal Identity: 
-                            </div>
-                            
+                            </div> 
                             <div class="row g-4">
                                 <div class="col-md-3">
                                     <label class="form-label-premium">Given Name<span class="required-mark">*</span></label>
@@ -192,7 +189,6 @@
                             <div class="section-divider">
                                 <i class="bi bi-geo-alt-fill me-2"></i> 03. Contact & Residence
                             </div>
-                            
                             <div class="row g-4">
                                 <div class="col-md-6">
                                     <label class="form-label-premium">Primary Phone<span class="required-mark">*</span></label>
@@ -204,7 +200,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <label class="form-label-premium">Secondary Address (Optional)</label>
-                                    <input type="text" class="form-control form-control-premium" name="address2" placeholder="Building / Apartment" value="{{old('address2')}}">
+                                    <input type="text" class="form-control form-control-premium" name="address2" placeholder="House no./kebele" value="{{old('address2')}}">
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label-premium">City / Region<span class="required-mark">*</span></label>
@@ -216,7 +212,7 @@
                             <div class="mt-5 pt-4 border-top text-end">
                                 <a href="{{url()->previous()}}" class="btn btn-link text-muted text-decoration-none fw-bold me-4">Discard Changes</a>
                                 <button type="submit" class="btn btn-enroll shadow-lg">
-                                    <i class="bi bi-person-check-fill me-2"></i> Initialize Faculty Record
+                                    <i class="bi bi-person-check-fill me-2"></i> Initialize Teacher Record
                                 </button>
                             </div>
                         </form>
