@@ -2,7 +2,6 @@
 
 @section('content')
 <style>
-    /* High-Level Dashboard UI */
     .dashboard-hero {
         background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         border-radius: 24px;
@@ -177,7 +176,7 @@
                                 <i class="bi bi-person-workspace"></i>
                             </div>
                             <div>
-                                <div class="stat-label">Faculty Members</div>
+                                <div class="stat-label">Teacher Members</div>
                                 <div class="stat-value">{{ $teacherCount ?? 0 }}</div>
                             </div>
                         </div>
@@ -240,7 +239,7 @@
                     <div class="col-lg-6">
                         <div class="section-card border shadow-sm">
                             <div class="section-card-header">
-                                <h5><i class="bi bi-broadcast text-primary me-2"></i>Official Notices</h5>
+                                <h5><i class="bi bi-broadcast text-primary me-2"></i>Official Announcements</h5>
                                 <div class="small">{{ $notices->links() }}</div>
                             </div>
                             <div class="card-body p-0">
