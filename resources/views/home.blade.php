@@ -87,15 +87,12 @@
         background: #f1f5f9;
         overflow: hidden;
     }
-    /* 1. Transform white cards to Dark Slate */
     .gender-analysis-card, .section-card {
         background: #1e293b !important; /* Matches the top stat cards */
         border: 1px solid rgba(255, 255, 255, 0.05) !important;
         border-radius: 20px !important;
         color: #ffffff !important;
     }
-
-    /* 2. Fix the header area of the Calendar and Notices */
     .section-card-header {
         background: rgba(255, 255, 255, 0.03) !important;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
@@ -106,8 +103,6 @@
         color: #ffffff !important;
         font-weight: 700 !important;
     }
-
-    /* 3. Fix the Notice Accordion for Dark Mode */
     .accordion-item {
         background: transparent !important;
         border-color: rgba(255, 255, 255, 0.05) !important;
@@ -123,12 +118,6 @@
         background: rgba(59, 130, 246, 0.1) !important;
         color: #60a5fa !important;
     }
-
-    /* 4. Fix the progress bar background */
-    .progress {
-        background: rgba(0, 0, 0, 0.3) !important;
-        height: 12px !important;
-    }
     .notice-item {
         border: none !important;
         border-bottom: 1px solid #f8fafc !important;
@@ -141,8 +130,6 @@
         color: #3b82f6;
         text-transform: uppercase;
     }
-
-    /* Scrollbar for 4GB RAM Efficiency */
     .scroll-container {
         max-height: 400px;
         overflow-y: auto;
@@ -150,12 +137,20 @@
 
     .scroll-container::-webkit-scrollbar { width: 5px; }
     .scroll-container::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-    /* Force Calendar text to be readable */
     #full_calendar_events {
         color: #ffffff !important;
     }
     .fc-day-number, .fc-col-header-cell-cushion {
         color: #ffffff !important;
+    .gender-analysis-card {
+       width: 100% !important;
+       margin-left: 0 !important;
+       margin-right: 0 !important;
+       box-sizing: border-box !important;
+   }
+   .progress {
+       margin: 10px 0 !important;
+   }
     }
 </style>
 
@@ -218,49 +213,38 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- 3. GENDER DEMOGRAPHICS (High-Visibility Patch) -->
+                <!-- 3. GENDER DEMOGRAPHICS (Aligned Width) -->
                 @if($studentCount > 0)
-     <div class="row mb-4">
-          <div class="col-12">
-                <div class="gender-analysis-card border shadow-sm " style="background: rgba(255,255,255,0.03) !important;">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h6 class="fw-800 text-uppercase small text-white-50 mb-0" style="letter-spacing: 1px;">Student Body Composition</h6>
-                        <div class="d-flex gap-3">
-                            <small class="text-white"><i class="bi bi-circle-fill me-1" style="color: #3b82f6;"></i> Male</small>
-                            <small class="text-white"><i class="bi bi-circle-fill me-1" style="color: #60a5fa;"></i> Female</small>
+                <div class="row g-4 mb-4"> <!-- This row and g-4 makes it align with the top cards -->
+                    <div class="col-12">
+                        <div class="gender-analysis-card border shadow-sm p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h6 class="fw-800 text-uppercase small text-white-50 mb-0">Student Body Composition</h6>
+                                <div class="d-flex gap-3">
+                                    <small class="text-white"><i class="bi bi-circle-fill me-1" style="color: #3b82f6;"></i> Male</small>
+                                    <small class="text-white"><i class="bi bi-circle-fill me-1" style="color: #60a5fa;"></i> Female</small>
+                                </div>
+                            </div>
+                            @php
+                                $count = $studentCount ?? 1;
+                                $males = $maleStudentsBySession ?? 0;
+                                $malePercent = round(($males / $count) * 100);
+                                $femalePercent = 100 - $malePercent;
+                            @endphp
+                            <div class="progress" style="height: 12px; background: rgba(0,0,0,0.3); border-radius: 50px;">
+                                <div class="progress-bar" role="progressbar" style="width: {{ $malePercent }}%; background-color: #3b82f6;"></div>
+                                <div class="progress-bar" role="progressbar" style="width: {{ $femalePercent }}%; background-color: #60a5fa;"></div>
+                            </div>
+                            <div class="d-flex justify-content-between mt-2">
+                                <span class="fw-bold text-white small">{{ $malePercent }}% Male</span>
+                                <span class="fw-bold text-white small">{{ $femalePercent }}% Female</span>
+                            </div>
                         </div>
-                    </div>
-    
-                    @php
-                        // Use ?? 0 to prevent PHP 8.3 crash if variables are missing
-                        $count = $studentCount ?? 1;
-                        $males = $maleStudentsBySession ?? 0;
-                        $malePercent = round(($males / $count) * 100);
-                        $femalePercent = 100 - $malePercent;
-                    @endphp
-
-                    <div class="progress shadow-sm" style="height: 15px; background: rgba(0,0,0,0.3); border-radius: 50px;">
-                        <div class="progress-bar" role="progressbar" 
-                             style="width: {{ $malePercent }}%; background-color: #3b82f6;" 
-                             aria-valuenow="{{ $malePercent }}" aria-valuemin="0" aria-valuemax="100">
-                        </div>
-                        <div class="progress-bar" role="progressbar" 
-                             style="width: {{ $femalePercent }}%; background-color: #60a5fa;" 
-                             aria-valuenow="{{ $femalePercent }}" aria-valuemin="0" aria-valuemax="100">
-                        </div>
-                    </div>
-    
-                    <div class="d-flex justify-content-between mt-2 px-1">
-                        <span class="fw-bold text-white" style="font-size: 0.85rem;">{{ $malePercent }}% Male</span>
-                        <span class="fw-bold text-white" style="font-size: 0.85rem;">{{ $femalePercent }}% Female</span>
                     </div>
                 </div>
-          </div>
-     </div>
                 @endif
                 <!-- 4. EVENTS & NOTICES -->
-                <div class="row g-4 mb-5">
+                <div class="row g-4 mt-4">
                     <!-- Events -->
                     <div class="col-lg-6">
                         <div class="section-card border shadow-sm">
