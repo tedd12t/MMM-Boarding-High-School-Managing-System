@@ -48,21 +48,14 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {
-        return Validator::make($data, [
-           'first_name' => $input['first_name'], // Change 'name' to 'first_name'
-           'last_name' => $input['last_name'],   // Add this
-           'email' => $input['email'],
-           'password' => Hash::make($input['password']),
-           'role' => 'student', 
-           'gender' => 'male',
-           'status' => 1,
-           'nationality' => 'Ethiopian',
-           'address' => 'N/A',
-           'dob' => now(),
-           'phone' => '00000000',
-        ]);
-    }
+{
+    return Validator::make($data, [
+        'first_name' => ['required', 'string', 'max:255'],
+        'last_name'  => ['required', 'string', 'max:255'],
+        'email'      => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        'password'   => ['required', 'string', 'min:8', 'confirmed'],
+    ]);
+}
 
     /**
      * Create a new user instance after a valid registration.
@@ -71,11 +64,19 @@ class RegisterController extends Controller
      * @return \App\Models\User
      */
     protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
-    }
+{
+    return User::create([
+        'first_name'  => $data['first_name'],
+        'last_name'   => $data['last_name'],
+        'email'       => $data['email'],
+        'password'    => Hash::make($data['password']),
+        'role'        => 'student', 
+        'gender'      => 'male',    
+        'status'      => 1,         
+        'nationality' => 'Ethiopian',
+        'address'     => 'N/A',
+        'dob'         => now()->format('Y-m-d'),
+        'phone'       => '000000000',
+        'zip'         => '0000', // Added this to prevent the "Zip Required" error too
+    ]);
 }
