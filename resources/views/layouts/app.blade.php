@@ -119,6 +119,30 @@
         .fc-theme-standard td, .fc-theme-standard th {
             border: 1px solid #e2e8f0 !important;
         }
+        #app {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Full height of the screen */
+        }
+
+        main {
+            flex: 1 0 auto; /* This area grows to fill space, pushing footer down */
+        }
+
+        footer, .footer-content {
+            flex-shrink: 0; /* Prevents footer from squishing */
+            padding: 30px 0;
+            width: 100%;
+            background-color: transparent;
+        }
+
+        /* Optional: Styling for the footer text to make it look premium */
+        .footer-text {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: #94a3b8 !important;
+            letter-spacing: 1px;
+        }
     </style>
 </head>
 <body>
@@ -178,6 +202,7 @@
         <main>
             @yield('content')
         </main>
+           @include('layouts.footer')
     </div>
 </body>
 </html>
